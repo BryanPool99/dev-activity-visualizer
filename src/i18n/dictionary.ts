@@ -50,6 +50,21 @@ const es = {
   'notFound.title': 'Página no encontrada',
   'notFound.body': 'Esa dirección no lleva a ningún informe.',
   'notFound.back': 'Volver al inicio',
+
+  'insight.no-activity': 'No hay actividad pública en la ventana leída.',
+  'insight.too-few-samples':
+    'Solo {count} marcas en la ventana: los datos se muestran, pero no alcanzan a leerse como un ritmo.',
+  'insight.partial-window':
+    'Sin token el informe cubre {days} días de pushes públicos, no el año completo.',
+  'insight.partial-truncated':
+    'Sin token el informe cubre {days} días de pushes públicos, y el feed alcanzó su techo de 300 eventos.',
+  'insight.peak-hour': 'El momento de más actividad cae sobre las {hour}:00.',
+  'insight.night-owl': 'La actividad se concentra de noche: su pico llega a las {hour}:00.',
+  'insight.early-bird': 'Es de las que madrugan: su pico llega a las {hour}:00.',
+  'insight.weekend': 'El {share}% de la actividad cae en fin de semana.',
+  'insight.longest-streak': 'Su mejor racha llega a {days} días seguidos.',
+  'insight.top-language': '{name} acapara el {share}% de su código.',
+  'insight.top-repo': '{name} es su repositorio más destacado del proyecto, con {stars} estrellas.',
 } as const
 
 export type TranslationKey = keyof typeof es
@@ -107,6 +122,21 @@ const en: Dictionary = {
   'notFound.title': 'Page not found',
   'notFound.body': 'That address leads to no report.',
   'notFound.back': 'Back to start',
+
+  'insight.no-activity': 'No public activity in the window read.',
+  'insight.too-few-samples':
+    'Only {count} marks in the window: the data is shown, but it is too little to read as a rhythm.',
+  'insight.partial-window':
+    'Without a token the report covers {days} days of public pushes, not the full year.',
+  'insight.partial-truncated':
+    'Without a token the report covers {days} days of public pushes, and the feed hit its 300-event ceiling.',
+  'insight.peak-hour': 'The busiest moment falls around {hour}:00.',
+  'insight.night-owl': 'The work concentrates at night: the peak lands at {hour}:00.',
+  'insight.early-bird': 'An early riser: the peak lands at {hour}:00.',
+  'insight.weekend': '{share}% of the activity lands at the weekend.',
+  'insight.longest-streak': 'The longest streak runs to {days} days in a row.',
+  'insight.top-language': '{name} takes {share}% of the code.',
+  'insight.top-repo': '{name} is the standout repository, with {stars} stars.',
 }
 
 export const dictionaries: Record<'es' | 'en', Dictionary> = { es, en }
