@@ -45,7 +45,7 @@ export function HourDial({ counts, peakHour, name, size = 260 }: HourDialProps) 
             : `${name}: the busiest hour is ${peakHour}:00, with ${counts[peakHour]} of ${total}.`
         }
       >
-        <circle cx={center} cy={center} r={inner - stroke / 2} fill="none" stroke="#e5e7eb" strokeWidth={1} />
+        <circle cx={center} cy={center} r={inner - stroke / 2} fill="none" stroke="var(--line)" strokeWidth={1} />
 
         {counts.map((count, hour) => {
           if (count <= 0) return null
@@ -64,7 +64,7 @@ export function HourDial({ counts, peakHour, name, size = 260 }: HourDialProps) 
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke={isPeak ? '#111827' : '#d1d5db'}
+              stroke={isPeak ? 'var(--ink)' : 'var(--line-strong)'}
               strokeWidth={isPeak ? stroke * 1.15 : stroke}
               strokeLinecap="round"
             />

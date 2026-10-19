@@ -13,6 +13,8 @@ const es = {
   'lang.label': 'Idioma',
   'lang.es': 'ES',
   'lang.en': 'EN',
+  'theme.toDark': 'Cambiar al tema oscuro',
+  'theme.toLight': 'Cambiar al tema claro',
 
   'token.connect': 'Conectar token',
   'token.connectShort': 'Token',
@@ -178,6 +180,8 @@ const en: Dictionary = {
   'lang.label': 'Language',
   'lang.es': 'ES',
   'lang.en': 'EN',
+  'theme.toDark': 'Switch to the dark theme',
+  'theme.toLight': 'Switch to the light theme',
 
   'token.connect': 'Connect token',
   'token.connectShort': 'Token',

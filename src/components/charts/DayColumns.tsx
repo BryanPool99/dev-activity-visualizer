@@ -1,13 +1,12 @@
 import { useMemo, useState } from 'react'
 import { formatDay } from '../../lib/charts/format'
-import { CONTRIBUTION_SCALE, contributionLevel } from '../../lib/charts/scale'
+import { contributionFill, contributionLevel } from '../../lib/charts/scale'
 import type { DayCount } from '../../lib/metrics/types'
 
 type DayColumnsProps = {
   days: DayCount[]
   unitLabel: string
   name: string
-  palette?: readonly string[]
   height?: number
 }
 
@@ -34,7 +33,6 @@ export function DayColumns({
   days,
   unitLabel,
   name,
-  palette = CONTRIBUTION_SCALE,
   height = 132,
 }: DayColumnsProps) {
   const [hovered, setHovered] = useState<{ day: DayCount; index: number } | null>(null)
@@ -80,7 +78,7 @@ export function DayColumns({
             >
               <div
                 className="h-full w-full rounded-t-[2px]"
-                style={{ backgroundColor: palette[contributionLevel(day.count, max)] }}
+                style={{ backgroundColor: contributionFill(contributionLevel(day.count, max)) }}
               />
             </div>
           )

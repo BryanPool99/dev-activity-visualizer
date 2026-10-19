@@ -43,8 +43,8 @@ describe('Heatmap', () => {
     const rects = container.querySelectorAll('rect')
 
     // 5 is the maximum, so it takes the last step of the scale.
-    expect(rects[4]).toHaveAttribute('fill', '#216e39')
-    expect(rects[0]).toHaveAttribute('fill', '#ebedf0')
+    expect(rects[4]).toHaveAttribute('fill', 'var(--contribution-4)')
+    expect(rects[0]).toHaveAttribute('fill', 'var(--contribution-0)')
   })
 })
 
@@ -95,8 +95,8 @@ describe('HourDial', () => {
     const { container } = render(<HourDial counts={counts} peakHour={9} name="torvalds" />)
     const spokes = container.querySelectorAll('line')
 
-    expect(spokes[0]).toHaveAttribute('stroke', '#111827')
-    expect(spokes[1]).toHaveAttribute('stroke', '#d1d5db')
+    expect(spokes[0]).toHaveAttribute('stroke', 'var(--ink)')
+    expect(spokes[1]).toHaveAttribute('stroke', 'var(--line-strong)')
   })
 
   it('draws no spoke when there is no activity', () => {

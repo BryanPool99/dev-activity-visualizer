@@ -21,25 +21,91 @@
     U+A720-A7FF;
 }
 
-@theme {
+/*
+ * The palette lives here, in plain custom properties, so a theme is a single
+ * block of overrides rather than a second set of utilities. `:root` is the
+ * light theme; `[data-theme='dark']` is the other one. Every text tone clears
+ * WCAG AA on its own ground.
+ */
+:root {
+  --ground: #ffffff;
+  --surface: #f9fafb;
+  --surface-sunken: #f3f4f6;
+  --line: #e5e7eb;
+  --line-strong: #d1d5db;
+  --ink: #111827;
+  --ink-muted: #4b5563;
+  --ink-subtle: #6b7280;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-wash: #eff6ff;
+  /* What sits on top of the accent. Inverted in the dark theme, because a
+     bright blue cannot carry white text at AA. */
+  --on-accent: #ffffff;
+  --scrim: rgb(17 24 39 / 0.25);
+
+  /* Data colour: GitHub's own five-step scale, for a light ground. */
+  --contribution-0: #ebedf0;
+  --contribution-1: #9be9a8;
+  --contribution-2: #40c463;
+  --contribution-3: #30a14e;
+  --contribution-4: #216e39;
+
+  /* The duel: the first account in ink, the second in the accent. */
+  --duel-first: #111827;
+  --duel-first-weak: #6b7280;
+  --duel-second: #2563eb;
+  --duel-second-weak: #93c5fd;
+  --duel-tie: #d1d5db;
+  --duel-none: #f3f4f6;
+}
+
+[data-theme='dark'] {
+  --ground: #0b0d10;
+  --surface: #14171c;
+  --surface-sunken: #1c2026;
+  --line: #262b33;
+  --line-strong: #363c45;
+  --ink: #e8eaed;
+  --ink-muted: #a4acb7;
+  --ink-subtle: #8b929c;
+  --accent: #4a8cff;
+  --accent-strong: #6ba1ff;
+  --accent-wash: #16233d;
+  --on-accent: #0b0d10;
+  --scrim: rgb(0 0 0 / 0.68);
+
+  --contribution-0: #161b22;
+  --contribution-1: #0e4429;
+  --contribution-2: #006d32;
+  --contribution-3: #26a641;
+  --contribution-4: #39d353;
+
+  --duel-first: #e8eaed;
+  --duel-first-weak: #8b929c;
+  --duel-second: #4a8cff;
+  --duel-second-weak: #2b4f8f;
+  --duel-tie: #363c45;
+  --duel-none: #1c2026;
+}
+
+@theme inline {
   --font-sans:
     'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-  /* Neutral scale — the whole surface is built from these. Every text tone
-     clears WCAG AA on white: ink 16:1, muted 7.5:1, subtle 4.8:1. */
-  --color-ground: #ffffff;
-  --color-surface: #f9fafb;
-  --color-surface-sunken: #f3f4f6;
-  --color-line: #e5e7eb;
-  --color-line-strong: #d1d5db;
-  --color-ink: #111827;
-  --color-ink-muted: #4b5563;
-  --color-ink-subtle: #6b7280;
-
-  /* One accent. Used for the primary action and nothing decorative. */
-  --color-accent: #2563eb;
-  --color-accent-strong: #1d4ed8;
-  --color-accent-wash: #eff6ff;
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-wash: var(--accent-wash);
+  --color-on-accent: var(--on-accent);
+  --color-scrim: var(--scrim);
 
   --radius-card: 8px;
   --radius-control: 6px;
@@ -52,20 +118,20 @@
   }
 
   body {
-    background-color: var(--color-ground);
-    color: var(--color-ink);
+    background-color: var(--ground);
+    color: var(--ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
   ::selection {
-    background: var(--color-accent-wash);
+    background: var(--accent-wash);
   }
 }
 

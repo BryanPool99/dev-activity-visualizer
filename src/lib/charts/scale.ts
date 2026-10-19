@@ -1,24 +1,10 @@
 /**
- * The palette the data uses, kept apart from the interface chrome.
+ * The contribution scale.
  *
- * The contribution grid borrows GitHub's own five-step scale, the way GitHub
- * uses it: the data carries the colour, the interface stays neutral.
+ * The five steps live in CSS (`--contribution-0` … `--contribution-4`) so a
+ * theme can hold its own version of them: GitHub's light scale on a light
+ * ground, GitHub's own dark scale on a dark one.
  */
-export const CONTRIBUTION_SCALE = [
-  '#ebedf0', // nothing
-  '#9be9a8',
-  '#40c463',
-  '#30a14e',
-  '#216e39', // the busiest
-] as const
-
-export const CONTRIBUTION_SCALE_DARK = [
-  '#161b22',
-  '#0e4429',
-  '#006d32',
-  '#26a641',
-  '#39d353',
-] as const
 
 /**
  * Which step a count sits on. The scale is relative to the account's own
@@ -34,5 +20,7 @@ export function contributionLevel(count: number, max: number): number {
   return 4
 }
 
-/** A neutral ramp for the charts that carry no colour of their own. */
-export const NEUTRAL_RAMP = ['#e5e7eb', '#d1d5db', '#9ca3af', '#6b7280', '#111827'] as const
+/** The fill for a step, resolved by the theme in force. */
+export function contributionFill(level: number): string {
+  return `var(--contribution-${Math.max(0, Math.min(4, level))})`
+}

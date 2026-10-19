@@ -43,7 +43,7 @@ export function Dialog({ open, onClose, title, children }: DialogProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-24">
       <div
-        className="absolute inset-0 bg-ink/25"
+        className="absolute inset-0 bg-scrim"
         onClick={onClose}
         aria-hidden="true"
       />

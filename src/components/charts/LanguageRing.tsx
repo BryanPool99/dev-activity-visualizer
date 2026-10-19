@@ -42,7 +42,7 @@ export function LanguageRing({
             cy={center}
             r={radius}
             fill="none"
-            stroke="#f3f4f6"
+            stroke="var(--surface-sunken)"
             strokeWidth={thickness}
           />
           {items.map((item) => {
