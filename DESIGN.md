@@ -316,6 +316,8 @@ The contribution grid is the fixed point of the whole system: one column per wee
 
 Breakpoints follow Tailwind's defaults: `sm` 640px (the header search collapses into its own row, the nav link appears, the stat tiles go horizontal), `md` 768px (the rate-limit meter appears), `lg` 1024px (the report's card rows break into 5/7, 4/4/4 and 4/8 columns; below that every card is full width). The duel grid and the duel dial sit side by side at `lg` and stack below it.
 
+A year of weeks is wider than a phone, so both wide grids — the contribution grid and the duel grid — keep their natural size inside a horizontal strip that scrolls, the way GitHub's own graph does on a small screen. They are never scaled down to fit: a grid squeezed to 41% has 4px cells, and a 4px cell is not a reading. Below `sm` a line under the legend says so — "Desliza para ver el año entero →" — so the strip reads as a strip and not as a crop.
+
 ## Elevation & Depth
 
 Depth is carried by hairline borders and tonal fills, not by shadow. A card is the ground colour on the ground colour, separated from the page by a 1px hairline rule; a sunken surface is one step down in tone; a disabled control is one step down again. There is no drop shadow on any resting surface — no card, no button, no input, no bar.
@@ -406,7 +408,7 @@ A 36px square button in the header, between the language toggle and the token bu
 A 36px group of 28px segments inside a 1px hairline border with a 2px inner pad. The active segment is filled with the accent wash and set in accent ink; the inactive is muted and turns to ink on hover. The two-letter codes are the only uppercase in the interface.
 
 ### Dialog
-The token prompt. A full-bleed scrim in the scrim token, a 448px panel on the ground fill with an 8px radius and a hairline border, padded 24px, anchored 96px from the top. Focus moves to the first field on open, Escape closes, body scroll is locked while it is open, and focus returns to the trigger on close.
+The token prompt. A full-bleed scrim in the scrim token, a 448px panel on the ground fill with an 8px radius and a hairline border, padded 24px, anchored 96px from the top. Focus moves to the first field on open, Escape closes, body scroll is locked while it is open, and focus returns to the trigger on close. The dialog is portalled to the document body: the sticky header carries a `backdrop-filter`, and any ancestor with one becomes the containing block of its `position: fixed` descendants, which would measure the overlay against the header instead of against the viewport.
 
 ## Do's and Don'ts
 
