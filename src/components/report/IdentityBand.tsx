@@ -41,6 +41,7 @@ export function IdentityBand({ profile, metrics }: IdentityBandProps) {
 
       <dl className="ml-auto grid w-full grid-cols-3 divide-x divide-line sm:flex sm:w-auto sm:items-stretch">
         <StatTile
+          size="lead"
           label={totalLabel}
           value={new Intl.NumberFormat().format(metrics.calendar.total)}
           hint={t('report.activeDays') + ': ' + metrics.calendar.activeDays}
