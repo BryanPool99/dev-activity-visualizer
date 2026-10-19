@@ -51,6 +51,17 @@ const es = {
   'notFound.body': 'Esa dirección no lleva a ningún informe.',
   'notFound.back': 'Volver al inicio',
 
+  'report.source': 'Fuente',
+  'report.measure.contributions': 'Contribuciones de GitHub',
+  'report.measure.pushes': 'Pushes públicos',
+  'report.measure.bytes': 'Bytes de código',
+  'report.measure.repositories': 'Repositorios',
+  'report.localTime': 'Hora local (UTC{offset})',
+  'report.legend.less': 'Menos',
+  'report.legend.more': 'Más',
+  'report.unit.contributions': 'contribuciones',
+  'report.unit.pushes': 'pushes',
+
   'insight.no-activity': 'No hay actividad pública en la ventana leída.',
   'insight.too-few-samples':
     'Solo {count} marcas en la ventana: los datos se muestran, pero no alcanzan a leerse como un ritmo.',
@@ -122,6 +133,17 @@ const en: Dictionary = {
   'notFound.title': 'Page not found',
   'notFound.body': 'That address leads to no report.',
   'notFound.back': 'Back to start',
+
+  'report.source': 'Source',
+  'report.measure.contributions': 'GitHub contributions',
+  'report.measure.pushes': 'Public pushes',
+  'report.measure.bytes': 'Bytes of code',
+  'report.measure.repositories': 'Repositories',
+  'report.localTime': 'Local time (UTC{offset})',
+  'report.legend.less': 'Less',
+  'report.legend.more': 'More',
+  'report.unit.contributions': 'contributions',
+  'report.unit.pushes': 'pushes',
 
   'insight.no-activity': 'No public activity in the window read.',
   'insight.too-few-samples':
