@@ -1,0 +1,166 @@
+{
+  "title": "Elige el mundo visual",
+  "question": "La ruleta asignó El Plano del Año. Consérvalo, toma una alternativa o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "El Plano del Año",
+      "kicker": "THE ROLL",
+      "lineage": "planos de ejecución y láminas de delineación, 1950s–1980s",
+      "thesis": "El año de actividad de un developer dibujado como un plano de ejecución: alzado de 53 semanas, cotas, gráfico polar y cajetín de identification.",
+      "palette": ["#F2EDE3", "#1A1A18", "#C2372C", "#26456F", "#7A756B"],
+      "materials": ["papel de delineación", "tinta ferrogálica", "regla de un píxel"],
+      "viewport": "Una hoja apaisada con el cajetín arriba a la derecha, el alzado de semanas ocupando la mitad superior y el gráfico polar de 24 h abajo a la izquierda.",
+      "risk": "Leído sin datos, un plano es un documento frío: si el alzado de semanas no se lee de un vistazo como actividad, la metáfora no paga.",
+      "raised": [
+        { "from": "challenger-wayfinding-cartography-signage-midnight-transit-diagram", "raise": "El Intercambio — un nodo marcado donde se cruzan las dos series: la hora de solapamiento se dibuja como un círculo de intercambio y se nombra en el cajetín." },
+        { "from": "challenger-rw-timetable-slide-rack", "raise": "La Medida Fija — la hoja conserva su medida y un riel del año bajo cada sección muestra siempre la posición y la extensión." },
+        { "from": "challenger-pop-culture-shelf-doujin-event-catalog", "raise": "El Círculo — un único círculo trazado a mano marca el elemento atendido; es el solo gesto libre del sistema." },
+        { "from": "challenger-digital-design-canon-monochrome-product-marketing", "raise": "La Prueba al Pie — cada plano lleva al pie el endpoint exacto y la fecha de la consulta." },
+        { "from": "challenger-ikeda-datamatics", "raise": "Sin Volumen — tinta plana: ni sombras, ni degradados, ni brillos." },
+        { "from": "challenger-rw-centre-rail-reference-setting", "raise": "El Trazo a Un Píxel — reglas de un píxel real, radio cero y estados dibujados como marcas impresas." }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "cajetín del developer", "x": 8, "y": 0, "w": 4, "h": 2, "accent": true },
+          { "label": "alzado 53 semanas", "x": 0, "y": 2, "w": 12, "h": 4 },
+          { "label": "gráfico polar 24 h", "x": 0, "y": 6, "w": 5, "h": 4 },
+          { "label": "cota de racha", "x": 5, "y": 6, "w": 7, "h": 1 },
+          { "label": "cuadro de materiales", "x": 5, "y": 7, "w": 7, "h": 3 }
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "El Atlas de Cartografía",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "hojas de atlas topográfico y mapas de carretera en papel de atlas",
+      "thesis": "El año de un developer como una hoja de atlas: la densidad es el relieve, la hora es la banda día/noche y los lenguajes son la leyenda.",
+      "palette": ["#EDE4CE", "#1E1B16", "#2F6B4F", "#B8862B", "#8C4A2F"],
+      "materials": ["cartografía en papel", "tinta litografiada", "sombreado hipsométrico"],
+      "viewport": "Una hoja de atlas con recuadro, escala y numeración de lámina; el campo del año se lee como territorio y no como tabla.",
+      "risk": "El mapa de calor ya es el idioma visual de GitHub: cartografiar el año puede ser solo re-decorar el tablero por defecto.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "recuadro y escala", "x": 0, "y": 0, "w": 3, "h": 2 },
+          { "label": "mapa de densidad del año", "x": 3, "y": 0, "w": 9, "h": 6 },
+          { "label": "leyenda", "x": 0, "y": 2, "w": 3, "h": 4 },
+          { "label": "banda día/noche 24 h", "x": 0, "y": 6, "w": 12, "h": 2 },
+          { "label": "cajetín de lámina", "x": 9, "y": 8, "w": 3, "h": 2, "accent": true }
+        ]
+      }
+    },
+    {
+      "id": "challenger-wayfinding-cartography-signage-midnight-transit-diagram",
+      "label": "El Plano de Metro",
+      "verdict": "competitive",
+      "lineage": "mural de enamel de medianoche con tintas de línea",
+      "thesis": "El año como una línea de metro: cada día una estación y las horas de solapamiento un intercambio.",
+      "palette": ["#0A1B33", "#F2F4F7", "#E03A2F", "#2B6BD6", "#E8B23A", "#2FA05A"],
+      "materials": ["enamel de medianoche", "tinta de línea", "porcelana"],
+      "viewport": "Líneas de 45 y 90 grados que se cruzan en estaciones de intercambio, con la línea elegida ardiendo más brillante.",
+      "case": "Funde limpio y gana en identificación: el duelo es literalmente un intercambio. Pierde en claridad: un diagrama de metro codifica secuencia, no magnitud, y un año completo no cabe en una línea.",
+      "kept": "El Intercambio — el nodo compartido donde dos series se encuentran.",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram.webp"
+    },
+    {
+      "id": "challenger-pop-culture-shelf-doujin-event-catalog",
+      "label": "El Catálogo de Estampas",
+      "verdict": "competitive",
+      "lineage": "catálogos de convenciones impresos en papel de diario",
+      "thesis": "Cada día activo como un sello numerado en una rejilla de catálogo, y los que importan circulados a bolígrafo.",
+      "palette": ["#E8E4D8", "#1A1A18", "#C0392B"],
+      "materials": ["papel de diario", "tinta única", "sellos de tamaño timbre"],
+      "viewport": "Miles de miniaturas de tamaño timbre apretadas en una rejilla numerada, con un mapa de sala plegado al margen.",
+      "case": "Funde bien en claridad: la rejilla es un heatmap con códigos, y el círculo a bolígrafo es un estado de atención legible. Gana menos en identificación: el catálogo de convención no es un mundo en el que el developer se reconozca.",
+      "kept": "El Círculo — el único gesto a mano del sistema.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-doujin-event-catalog-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-doujin-event-catalog.webp"
+    },
+    {
+      "id": "challenger-digital-design-canon-monochrome-product-marketing",
+      "label": "El Canon Monocromo",
+      "verdict": "competitive",
+      "lineage": "superficies de marketing de software en una sola escala neutra",
+      "thesis": "Un informe casi sin color, con una sola tinta de acento y cada cifra seguida de la prueba que la sostiene.",
+      "palette": ["#FFFFFF", "#111827", "#2563EB"],
+      "materials": ["escala neutra fina", "capturas enmarcadas", "rejilla estricta"],
+      "viewport": "Titulares en minúscula, dos pesos, y cada afirmación emparejada con el detalle de interfaz que la demuestra.",
+      "case": "Funde con facilidad y gana en claridad pura, pero pierde en identificación: es exactamente la superficie que el developer ya ve en cada SaaS y de la que estamos huyendo. Además roza el atajo de la categoría.",
+      "kept": "La Prueba al Pie — cada cifra con su fuente al pie.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-monochrome-product-marketing-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/digital-design-canon-monochrome-product-marketing.webp"
+    },
+    {
+      "id": "challenger-rw-centre-rail-reference-setting",
+      "label": "La Página de Referencia",
+      "verdict": "competitive",
+      "lineage": "ediciones de referencia de tirada corta con riel central de teclas",
+      "thesis": "Dos columnas de texto denso flankeadas por un riel de claves, con todo el aparato en un margen ancho.",
+      "palette": ["#F3EEE3", "#14140F", "#6B6B6B", "#C23A2A"],
+      "materials": ["papel sin blanquear", "tinta de hierro", "motor de reglas"],
+      "viewport": "Una página bloqueada en su medida con márgenes de anotación que cuelgan del bloque y se solapan con su borde.",
+      "case": "Funde bien en claridad y aporta el vocabulario de estados más afilado (trazo en reposo, relleno al pulsar, tachado al gastarse). Pierde en identificación: es un mundo editorial que no le pertenece, no el del developer que abre su propio informe.",
+      "kept": "El Trazo a Un Píxel — reglas de un píxel real, radio cero, estados como marcas impresas.",
+      "hero": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/rw-centre-rail-reference-setting.webp"
+    },
+    {
+      "id": "challenger-rw-timetable-slide-rack",
+      "label": "El Horario de Bolsillo",
+      "verdict": "declined",
+      "lineage": "horarios de bolsillo sobre un lecho de goldenrod con diapositivas de vidrio",
+      "thesis": "El año como un tablero de salidas, con columnas de hora y una sola luz recorriendo el lecho.",
+      "palette": ["#E0A81E", "#1E3B34", "#16150F", "#F4EEDD", "#C0392B"],
+      "materials": ["lecho iluminado", "cristal tintado", "regla de acetato"],
+      "viewport": "Un largo riel de diapositivas inclinadas 11 grados, cada una con su propio título.",
+      "case": "Funde mal para este producto: la doctrina de un solo tamaño tipográfico es de página de marketing y aplasta la jerarquía que un informe de métricas necesita, y un riel lineal no admite un año entero.",
+      "kept": "La Medida Fija — la medida que no escala y el riel que siempre muestra posición y extensión.",
+      "hero": "https://impeccable.style/worlds/cards/rw-timetable-slide-rack-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/rw-timetable-slide-rack.webp"
+    },
+    {
+      "id": "challenger-ikeda-datamatics",
+      "label": "Los Datamatic",
+      "verdict": "declined",
+      "lineage": "instalaciones de datos en blanco y negro puro de Ikeda",
+      "thesis": "Columnas densas de códigos de barras y celdas de retícula que laten en blanco y negro absoluto.",
+      "palette": ["#0A0A0A", "#FAFAF7"],
+      "materials": ["negro y blanco puros", "trazo de un píxel", "retícula de senos"],
+      "viewport": "Un muro de barras verticales que en un frame se voltea entero a su negativo.",
+      "case": "Funde mal: el negro y blanco absoluto contradice el compromiso de marca de usar los colores de lenguaje de GitHub como datos, y deja el duelo sin dos series distinguibles. La disciplina de planitud sí nos sirve.",
+      "kept": "Sin Volumen — tinta plana, sin sombras, degradados ni brillos.",
+      "hero": "https://impeccable.style/worlds/cards/ikeda-datamatics-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/ikeda-datamatics.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Lo que esta categoría siempre entrega, ejecutado con oficio de nivel superior.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB"],
+    "materials": ["rejilla limpia", "capturas de producto"],
+    "viewport": "La disposición que un visitante espera, sin una sola sorpresa.",
+    "risk": "Indistinguible de la competencia por diseño.",
+    "wireframe": {
+      "cols": 12,
+      "rows": 10,
+      "regions": [
+        { "label": "buscador", "x": 0, "y": 0, "w": 12, "h": 2, "accent": true },
+        { "label": "tarjetas de KPI", "x": 0, "y": 2, "w": 12, "h": 2 },
+        { "label": "heatmap", "x": 0, "y": 4, "w": 12, "h": 4 },
+        { "label": "lenguajes", "x": 0, "y": 8, "w": 6, "h": 2 },
+        { "label": "horas", "x": 6, "y": 8, "w": 6, "h": 2 }
+      ]
+    }
+  },
+  "steer": true,
+  "followup": true
+}
