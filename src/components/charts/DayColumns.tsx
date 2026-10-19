@@ -107,7 +107,7 @@ export function DayColumns({
         {months.map((mark) => (
           <span
             key={`${mark.label}-${mark.index}`}
-            className="absolute text-[10px] text-ink-subtle"
+            className="absolute text-[11px] text-ink-subtle"
             style={{ left: `${(mark.index / days.length) * 100}%` }}
           >
             {mark.label}

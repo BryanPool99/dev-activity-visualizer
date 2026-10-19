@@ -136,7 +136,7 @@ export function DuelDial({
               y={center + Math.sin(a) * r}
               textAnchor="middle"
               dominantBaseline="middle"
-              className="fill-ink-subtle text-[10px]"
+              className="fill-ink-subtle text-[11px]"
             >
               {label}
             </text>

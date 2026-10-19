@@ -50,8 +50,8 @@ describe('Heatmap', () => {
 
 describe('LanguageRing', () => {
   const items: LanguageSlice[] = [
-    { name: 'TypeScript', color: '#3178c6', value: 750, share: 0.75 },
-    { name: 'Rust', color: '#dea584', value: 250, share: 0.25 },
+    { name: 'TypeScript', color: '#9ca3af', value: 750, share: 0.75 },
+    { name: 'Rust', color: '#2563eb', value: 250, share: 0.25 },
   ]
 
   it('draws one arc per language', () => {

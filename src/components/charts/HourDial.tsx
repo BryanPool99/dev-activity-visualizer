@@ -82,7 +82,7 @@ export function HourDial({ counts, peakHour, name, size = 260 }: HourDialProps) 
               y={center + Math.sin(a) * r}
               textAnchor="middle"
               dominantBaseline="middle"
-              className="fill-ink-subtle text-[10px]"
+              className="fill-ink-subtle text-[11px]"
             >
               {label}
             </text>

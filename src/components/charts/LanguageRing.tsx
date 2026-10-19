@@ -69,7 +69,7 @@ export function LanguageRing({
           x={center}
           y={center - 4}
           textAnchor="middle"
-          className="fill-ink text-[15px] font-semibold"
+          className="fill-ink text-[16px] font-semibold"
         >
           {leader ? `${Math.round(leader.share * 100)}%` : '—'}
         </text>

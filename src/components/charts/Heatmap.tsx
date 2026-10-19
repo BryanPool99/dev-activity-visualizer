@@ -84,7 +84,7 @@ export function Heatmap({
       if (month !== lastMonth) {
         // Two labels need room between them, or they read as one.
         const previous = months[months.length - 1]
-        if (!previous || x - previous.x >= resolvedCellSize * 2.4) {
+        if (!previous || x - previous.x >= resolvedCellSize * 3) {
           months.push({ x, label: month, month })
         }        lastMonth = month
       }
@@ -136,7 +136,7 @@ export function Heatmap({
               key={`${label.month}-${label.x}`}
               x={label.x}
               y={-4}
-              className="fill-ink-subtle text-[10px]"
+              className="fill-ink-subtle text-[11px]"
             >
               {MONTH_LABELS[label.month - 1]}
             </text>
@@ -149,7 +149,7 @@ export function Heatmap({
                 x={-8}
                 y={entry.row * (resolvedCellSize + gap) + resolvedCellSize - 1}
                 textAnchor="end"
-                className="fill-ink-subtle text-[10px]"
+                className="fill-ink-subtle text-[11px]"
               >
                 {entry.label}
               </text>
