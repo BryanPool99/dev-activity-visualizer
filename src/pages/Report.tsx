@@ -1,8 +1,9 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { useI18n } from '../i18n'
 import { useUserReport } from '../hooks/useUserReport'
 import { buildMetrics } from '../lib/metrics'
+import { rememberAccount } from '../lib/recent'
 import { IdentityBand } from '../components/report/IdentityBand'
 import { ContributionCard } from '../components/report/ContributionCard'
 import { InsightsPanel } from '../components/report/InsightsPanel'
@@ -25,6 +26,16 @@ export function Report() {
     () => (query.data ? buildMetrics(query.data) : null),
     [query.data],
   )
+
+  // The account is remembered in this browser, and only here.
+  useEffect(() => {
+    if (!query.data) return
+    rememberAccount({
+      login: query.data.profile.login,
+      name: query.data.profile.name,
+      avatarUrl: query.data.profile.avatarUrl,
+    })
+  }, [query.data])
 
   if (query.isError) {
     return <ReportError error={query.error} onRetry={() => void query.refetch()} />

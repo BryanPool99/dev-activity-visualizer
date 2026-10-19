@@ -15,7 +15,9 @@ const es = {
   'lang.en': 'EN',
 
   'token.connect': 'Conectar token',
+  'token.connectShort': 'Token',
   'token.connected': 'Token conectado',
+  'token.connectedShort': 'Token ✓',
   'token.title': 'Token de GitHub (opcional)',
   'token.body':
     'Un token personal de GitHub amplía el informe al año completo de contribuciones y eleva el límite de peticiones. No necesita ningún permiso: los datos que leemos son públicos. El token se guarda solo en este navegador y nunca se envía a un servidor.',
@@ -57,6 +59,18 @@ const es = {
 
   'home.placeholder': 'Escribe un usuario de GitHub para ver su informe.',
   'home.recent': 'Sin historial todavía: el informe se recuerda en este navegador.',
+  'home.recentTitle': 'Informes vistos',
+  'home.compareLink': 'O compara dos cuentas',
+  'home.compareBody': 'Dos cuentas sobre el mismo instrumento: quién empuja más cada día y a qué hora se cruzan.',
+  'home.contentsTitle': 'Lo que trae el informe',
+  'home.contentsHeatmap': 'Un año de contribuciones, día a día.',
+  'home.contentsHours': 'Las horas del día en las que más empuja.',
+  'home.contentsLanguages': 'Los lenguajes con los que trabaja.',
+  'home.contentsStreaks': 'Rachas, constancia y repositorios.',
+  'home.tokenTitle': 'Con un token, el año completo',
+  'home.tokenBody':
+    'Sin token el informe se limita a los pushes públicos. Con un token sin permisos se ve el calendario de contribuciones entero, con los lenguajes contados por bytes.',
+  'home.tokenOn': 'El informe se lee con el calendario completo de contribuciones de GitHub.',
 
   'notFound.title': 'Página no encontrada',
   'notFound.body': 'Esa dirección no lleva a ningún informe.',
@@ -158,7 +172,9 @@ const en: Dictionary = {
   'lang.en': 'EN',
 
   'token.connect': 'Connect token',
+  'token.connectShort': 'Token',
   'token.connected': 'Token connected',
+  'token.connectedShort': 'Token ✓',
   'token.title': 'GitHub token (optional)',
   'token.body':
     'A GitHub personal token extends the report to the full contribution year and raises the request limit. It needs no permissions: everything we read is public. The token stays in this browser and is never sent to a server.',
@@ -200,6 +216,18 @@ const en: Dictionary = {
 
   'home.placeholder': 'Type a GitHub username to see their report.',
   'home.recent': 'No history yet: reports are remembered in this browser.',
+  'home.recentTitle': 'Reports seen',
+  'home.compareLink': 'Or compare two accounts',
+  'home.compareBody': 'Two accounts on the same instrument: who pushes more each day and the hours they cross.',
+  'home.contentsTitle': 'What the report holds',
+  'home.contentsHeatmap': 'A year of contributions, day by day.',
+  'home.contentsHours': 'The hours of the day where the pushing happens.',
+  'home.contentsLanguages': 'The languages the work is written in.',
+  'home.contentsStreaks': 'Streaks, constancy and repositories.',
+  'home.tokenTitle': 'With a token, the whole year',
+  'home.tokenBody':
+    'Without a token the report is limited to public pushes. With a token that needs no permissions, the whole contribution calendar is in view, with languages counted by bytes.',
+  'home.tokenOn': 'The report now reads GitHub’s full contribution calendar.',
 
   'notFound.title': 'Page not found',
   'notFound.body': 'That address leads to no report.',

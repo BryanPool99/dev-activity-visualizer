@@ -32,7 +32,8 @@ export function TokenButton() {
   return (
     <>
       <Button variant="ghost" onClick={() => setOpen(true)}>
-        {hasToken ? t('token.connected') : t('token.connect')}
+        <span className="sm:hidden">{hasToken ? t('token.connectedShort') : t('token.connectShort')}</span>
+        <span className="hidden sm:inline">{hasToken ? t('token.connected') : t('token.connect')}</span>
       </Button>
 
       <Dialog open={open} onClose={() => setOpen(false)} title={t('token.title')}>
