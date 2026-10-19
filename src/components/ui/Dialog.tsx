@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import type { ReactNode } from 'react'
 
 type DialogProps = {
@@ -40,7 +41,14 @@ export function Dialog({ open, onClose, title, children }: DialogProps) {
 
   if (!open) return null
 
-  return (
+  /*
+   * The dialog is portalled to the body on purpose. Any ancestor with a
+   * `backdrop-filter` — the sticky header has one — becomes the containing
+   * block of its `position: fixed` descendants, and the overlay would then be
+   * measured against the header instead of the viewport. The same happens to
+   * the page wrapper while its entrance animation is running.
+   */
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-24">
       <div
         className="absolute inset-0 bg-scrim"
@@ -56,6 +64,7 @@ export function Dialog({ open, onClose, title, children }: DialogProps) {
       >
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

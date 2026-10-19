@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import type { ReactElement } from 'react'
 import { Heatmap } from './Heatmap'
 import { LanguageRing } from './LanguageRing'
 import { HourDial } from './HourDial'
 import { WeekdayStrip } from './WeekdayStrip'
+import { I18nProvider } from '../../i18n'
 import type { DayCount, LanguageSlice } from '../../lib/metrics/types'
 
 const days: DayCount[] = [
@@ -17,15 +19,20 @@ const days: DayCount[] = [
   { date: '2026-01-11', count: 4, weekday: 0 },
 ]
 
+/** The chart reads its scroll hint from the dictionary, so it needs the provider. */
+function renderWithI18n(ui: ReactElement) {
+  return render(<I18nProvider>{ui}</I18nProvider>)
+}
+
 describe('Heatmap', () => {
   it('draws one cell per day', () => {
-    const { container } = render(<Heatmap days={days} unitLabel="contributions" name="torvalds" />)
+    const { container } = renderWithI18n(<Heatmap days={days} unitLabel="contributions" name="torvalds" />)
 
     expect(container.querySelectorAll('rect')).toHaveLength(days.length)
   })
 
   it('labels the grid for a screen reader', () => {
-    render(<Heatmap days={days} unitLabel="contributions" name="torvalds" />)
+    renderWithI18n(<Heatmap days={days} unitLabel="contributions" name="torvalds" />)
 
     expect(
       screen.getByRole('img', { name: /torvalds: 15 contributions across 5 active days/ }),
@@ -33,13 +40,13 @@ describe('Heatmap', () => {
   })
 
   it('renders nothing when there are no days', () => {
-    const { container } = render(<Heatmap days={[]} unitLabel="contributions" name="torvalds" />)
+    const { container } = renderWithI18n(<Heatmap days={[]} unitLabel="contributions" name="torvalds" />)
 
     expect(container.querySelector('svg')).toBeNull()
   })
 
   it('colours the busiest day on the darkest step', () => {
-    const { container } = render(<Heatmap days={days} unitLabel="contributions" name="torvalds" />)
+    const { container } = renderWithI18n(<Heatmap days={days} unitLabel="contributions" name="torvalds" />)
     const rects = container.querySelectorAll('rect')
 
     // 5 is the maximum, so it takes the last step of the scale.

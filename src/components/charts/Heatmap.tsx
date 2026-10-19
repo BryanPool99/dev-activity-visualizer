@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
+import { useI18n } from '../../i18n'
 import { weekdayOf } from '../../lib/metrics/dates'
 import type { DayCount } from '../../lib/metrics/types'
 import { contributionFill, contributionLevel } from '../../lib/charts/scale'
@@ -45,6 +46,7 @@ export function Heatmap({
 }: HeatmapProps) {
   const [hovered, setHovered] = useState<{ day: DayCount; at: Position } | null>(null)
   const frameRef = useRef<HTMLDivElement>(null)
+  const { t } = useI18n()
 
   const max = useMemo(() => days.reduce((peak, day) => Math.max(peak, day.count), 0), [days])
 
@@ -182,6 +184,8 @@ export function Heatmap({
           </span>
         </div>
       ) : null}
+
+      <p className="mt-3 text-xs text-ink-subtle sm:hidden">{t('chart.scrollHint')}</p>
     </div>
   )
 }

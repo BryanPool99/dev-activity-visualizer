@@ -76,29 +76,35 @@ export function DuelGrid({ days, nameA, nameB, cellSize, gap = 3 }: DuelGridProp
 
   return (
     <div>
-      <svg
-        width={width}
-        height={height}
-        viewBox={`0 0 ${width} ${height}`}
-        role="img"
-        aria-label={`${nameA} against ${nameB}, one square per day.`}
-      >
-        <g transform={`translate(${labelWidth}, ${labelHeight})`}>
-          {cells.map((cell) => (
-            <rect
-              key={cell.day.date}
-              x={cell.x}
-              y={cell.y}
-              width={resolvedCellSize}
-              height={resolvedCellSize}
-              rx={2}
-              fill={fillFor(cell.day)}
-              onMouseEnter={() => setHovered(cell.day)}
-              onMouseLeave={() => setHovered(null)}
-            />
-          ))}
-        </g>
-      </svg>
+      {/* A year of weeks is wider than a phone. The grid keeps its natural
+          size and the strip scrolls sideways, the way GitHub's own graph does,
+          rather than shrinking the squares into nothing. */}
+      <div className="overflow-x-auto">
+        <svg
+          width={width}
+          height={height}
+          viewBox={`0 0 ${width} ${height}`}
+          role="img"
+          aria-label={`${nameA} against ${nameB}, one square per day.`}
+          className="shrink-0"
+        >
+          <g transform={`translate(${labelWidth}, ${labelHeight})`}>
+            {cells.map((cell) => (
+              <rect
+                key={cell.day.date}
+                x={cell.x}
+                y={cell.y}
+                width={resolvedCellSize}
+                height={resolvedCellSize}
+                rx={2}
+                fill={fillFor(cell.day)}
+                onMouseEnter={() => setHovered(cell.day)}
+                onMouseLeave={() => setHovered(null)}
+              />
+            ))}
+          </g>
+        </svg>
+      </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-ink-muted">
         <span className="flex items-center gap-2">
@@ -113,6 +119,7 @@ export function DuelGrid({ days, nameA, nameB, cellSize, gap = 3 }: DuelGridProp
           <span aria-hidden="true" className="size-2.5 rounded-[2px] bg-line-strong" />
           {t('compare.tie')}
         </span>
+        <span className="w-full text-ink-subtle sm:hidden">{t('chart.scrollHint')}</span>
       </div>
 
       {hovered ? (
