@@ -1,61 +1,89 @@
+import { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { useI18n } from '../i18n'
-import { Card, CardHeader } from '../components/ui/Card'
-
-function HeatmapSkeleton() {
-  return (
-    <div className="flex gap-[3px] overflow-hidden" aria-hidden="true">
-      {Array.from({ length: 53 }, (_, week) => (
-        <div key={week} className="flex flex-col gap-[3px]">
-          {Array.from({ length: 7 }, (_, day) => (
-            <div key={day} className="size-2.5 rounded-cell bg-surface-sunken" />
-          ))}
-        </div>
-      ))}
-    </div>
-  )
-}
+import { useUserReport } from '../hooks/useUserReport'
+import { buildMetrics } from '../lib/metrics'
+import { IdentityBand } from '../components/report/IdentityBand'
+import { ContributionCard } from '../components/report/ContributionCard'
+import { InsightsPanel } from '../components/report/InsightsPanel'
+import { LanguageCard } from '../components/report/LanguageCard'
+import { HoursCard } from '../components/report/HoursCard'
+import { WeekdayCard } from '../components/report/WeekdayCard'
+import { RepositoriesCard } from '../components/report/RepositoriesCard'
+import { ProfileCard } from '../components/report/ProfileCard'
+import { SourcesCard } from '../components/report/SourcesCard'
+import { ReportSkeleton } from '../components/report/ReportSkeleton'
+import { ReportError } from '../components/report/ReportError'
+import { TokenPrompt } from '../components/report/TokenPrompt'
 
 export function Report() {
   const { username = '' } = useParams()
   const { t } = useI18n()
+  const query = useUserReport(username)
+
+  const metrics = useMemo(
+    () => (query.data ? buildMetrics(query.data) : null),
+    [query.data],
+  )
+
+  if (query.isError) {
+    return <ReportError error={query.error} onRetry={() => void query.refetch()} />
+  }
+  if (query.isPending || !metrics) return <ReportSkeleton />
+
+  const { profile, sources, completeness } = query.data
 
   return (
     <div className="px-6 py-6">
-      <div className="flex flex-wrap items-center gap-4">
-        <div className="size-16 rounded-full bg-surface-sunken" aria-hidden="true" />
-        <div>
-          <h1 className="text-xl font-semibold text-ink">{username}</h1>
-          <p className="text-sm text-ink-muted">@{username}</p>
-        </div>
-        <dl className="ml-auto flex items-stretch divide-x divide-line">
-          {[t('report.totalContributions'), t('report.currentStreak'), t('report.peakHourValue')].map(
-            (label) => (
-              <div key={label} className="px-6 first:pl-0">
-                <dt className="label-xs text-ink-subtle">{label}</dt>
-                <dd className="nums mt-1 text-2xl font-semibold text-ink">—</dd>
-              </div>
-            ),
-          )}
-        </dl>
+      <IdentityBand profile={profile} metrics={metrics} />
+
+      {completeness === 'partial' ? (
+        <TokenPrompt days={metrics.calendar.windowDays} />
+      ) : null}
+
+      <div className="mt-6">
+        <ContributionCard
+          name={profile.login}
+          metrics={metrics}
+          source={sources.calendar}
+        />
       </div>
 
-      <Card className="mt-6">
-        <CardHeader
-          title={t('report.contributions')}
-          meta={t('report.comingSoon')}
-        />
-        <div className="flex items-start justify-between gap-6 px-6 py-6">
-          <HeatmapSkeleton />
-          <div className="hidden shrink-0 items-center gap-2 lg:flex">
-            <span className="text-xs text-ink-subtle">Less</span>
-            {[0, 1, 2, 3, 4].map((step) => (
-              <span key={step} className="size-2.5 rounded-cell bg-surface-sunken" />
-            ))}
-            <span className="text-xs text-ink-subtle">More</span>
-          </div>
+      <div className="mt-6 grid grid-cols-12 items-stretch gap-6">
+        <div className="col-span-12 h-full lg:col-span-5">
+          <InsightsPanel insights={metrics.insights} />
         </div>
-      </Card>
+        <div className="col-span-12 h-full lg:col-span-7">
+          <LanguageCard metrics={metrics} source={sources.repos} />
+        </div>
+      </div>
+
+      <div className="mt-6 grid grid-cols-12 items-stretch gap-6">
+        <div className="col-span-12 h-full lg:col-span-4">
+          <HoursCard name={profile.login} metrics={metrics} source={sources.pushes} />
+        </div>
+        <div className="col-span-12 h-full lg:col-span-4">
+          <WeekdayCard name={profile.login} metrics={metrics} source={sources.pushes} />
+        </div>
+        <div className="col-span-12 h-full lg:col-span-4">
+          <RepositoriesCard metrics={metrics} source={sources.repos} />
+        </div>
+      </div>
+
+      <div className="mt-6 grid grid-cols-12 items-stretch gap-6">
+        <div className="col-span-12 h-full lg:col-span-4">
+          <ProfileCard profile={profile} />
+        </div>
+        <div className="col-span-12 h-full lg:col-span-8">
+          <SourcesCard data={query.data} />
+        </div>
+      </div>
+
+      <footer className="mt-8 border-t border-line pt-5">
+        <p className="text-xs text-ink-subtle">
+          {t('app.name')} · {t('report.source')}: {sources.profile}
+        </p>
+      </footer>
     </div>
   )
 }

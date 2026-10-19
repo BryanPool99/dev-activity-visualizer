@@ -8,7 +8,7 @@ type HeatmapProps = {
   days: DayCount[]
   /** The palette for the steps. The light scale by default. */
   palette?: readonly string[]
-  /** Cell edge in pixels. */
+  /** Cell edge in pixels. Left unset, the cells grow when the window is short. */
   cellSize?: number
   /** Gap between cells, in pixels. */
   gap?: number
@@ -24,13 +24,24 @@ type Position = {
 }
 
 /**
+ * A short window gets bigger cells, so the grid keeps its presence instead of
+ * floating in the corner of a wide card. A full year keeps the small cells.
+ */
+function cellSizeFor(columns: number): number {
+  if (columns <= 6) return 22
+  if (columns <= 12) return 18
+  if (columns <= 26) return 14
+  return 10
+}
+
+/**
  * The contribution grid: one column per week, one row per weekday, the way
  * GitHub draws it. A reading of a year of effort at a glance.
  */
 export function Heatmap({
   days,
   palette = CONTRIBUTION_SCALE,
-  cellSize = 10,
+  cellSize,
   gap = 3,
   unitLabel,
   name,
@@ -40,12 +51,21 @@ export function Heatmap({
 
   const max = useMemo(() => days.reduce((peak, day) => Math.max(peak, day.count), 0), [days])
 
+  const columns = useMemo(() => {
+    if (days.length === 0) return 0
+    const firstWeekday = weekdayOf(days[0].date)
+    const last = Math.floor((days.length - 1 + firstWeekday) / 7)
+    return last + 1
+  }, [days])
+
+  const resolvedCellSize = cellSize ?? cellSizeFor(columns)
+
   const { cells, monthLabels, width, height } = useMemo(() => {
     if (days.length === 0) {
       return { cells: [], monthLabels: [], width: 0, height: 0 }
     }
 
-    const step = cellSize + gap
+    const step = resolvedCellSize + gap
     const firstWeekday = weekdayOf(days[0].date)
 
     const built: { day: DayCount; x: number; y: number; level: number }[] = []
@@ -64,10 +84,9 @@ export function Heatmap({
       if (month !== lastMonth) {
         // Two labels need room between them, or they read as one.
         const previous = months[months.length - 1]
-        if (!previous || x - previous.x >= 34) {
+        if (!previous || x - previous.x >= resolvedCellSize * 2.4) {
           months.push({ x, label: month, month })
-        }
-        lastMonth = month
+        }        lastMonth = month
       }
     })
 
@@ -81,7 +100,7 @@ export function Heatmap({
       width: weekdayLabelWidth + columnCount * step,
       height: labelHeight + 7 * step,
     }
-  }, [days, cellSize, gap, max])
+  }, [days, resolvedCellSize, gap, max])
 
   if (days.length === 0) return null
 
@@ -125,7 +144,7 @@ export function Heatmap({
               <text
                 key={entry.label}
                 x={-8}
-                y={entry.row * (cellSize + gap) + cellSize - 1}
+                y={entry.row * (resolvedCellSize + gap) + resolvedCellSize - 1}
                 textAnchor="end"
                 className="fill-ink-subtle text-[10px]"
               >
@@ -139,8 +158,8 @@ export function Heatmap({
               key={cell.day.date}
               x={cell.x}
               y={cell.y}
-              width={cellSize}
-              height={cellSize}
+              width={resolvedCellSize}
+              height={resolvedCellSize}
               rx={2}
               fill={palette[cell.level]}
               onMouseEnter={(event) => trackPointer(event, cell.day)}
