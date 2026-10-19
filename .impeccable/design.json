@@ -1,110 +1,272 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-19T12:00:00Z",
+  "generatedAt": "2026-10-19T19:00:00Z",
   "title": "Design System: Dev Activity Visualizer",
   "extensions": {
     "colorMeta": {
       "ground": {
         "role": "neutral",
-        "displayName": "Ground White",
+        "displayName": "Ground",
         "canonical": "#ffffff",
-        "tonalRamp": ["#18181b", "#3f3f46", "#6b7280", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#f4f4f5", "#fafafa"]
+        "tonalRamp": ["#18181b", "#3f3f46", "#6b7280", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#f4f4f5", "#fafafa"],
+        "dark": {
+          "displayName": "Ground, dark",
+          "canonical": "#0b0d10",
+          "tonalRamp": ["#08090b", "#0f1114", "#16181c", "#1d2025", "#24272d", "#2b2e35", "#33373e", "#3c4048"]
+        }
       },
       "surface": {
         "role": "neutral",
-        "displayName": "Surface Mist",
+        "displayName": "Surface",
         "canonical": "#f9fafb",
-        "tonalRamp": ["#1c1c1f", "#454549", "#71717a", "#a8a8af", "#dcdce0", "#ececef", "#f6f6f8", "#fcfcfd"]
+        "tonalRamp": ["#1c1c1f", "#454549", "#71717a", "#a8a8af", "#dcdce0", "#ececef", "#f6f6f8", "#fcfcfd"],
+        "dark": {
+          "displayName": "Surface, dark",
+          "canonical": "#14171c",
+          "tonalRamp": ["#0b0d10", "#121519", "#181c21", "#1e2229", "#242830", "#2a2f37", "#31363e", "#383e46"]
+        }
       },
       "surface-sunken": {
         "role": "neutral",
-        "displayName": "Sunken Grey",
+        "displayName": "Sunken",
         "canonical": "#f3f4f6",
-        "tonalRamp": ["#1f2124", "#484b50", "#75797f", "#aeb1b6", "#dbdde0", "#e9ebee", "#f4f5f7", "#fafbfc"]
+        "tonalRamp": ["#1f2124", "#484b50", "#75797f", "#aeb1b6", "#dbdde0", "#e9ebee", "#f4f5f7", "#fafbfc"],
+        "dark": {
+          "displayName": "Sunken, dark",
+          "canonical": "#1c2026",
+          "tonalRamp": ["#0c0e11", "#131619", "#1a1e23", "#21252b", "#282d34", "#2f343c", "#363c45", "#3d444d"]
+        }
       },
       "line": {
         "role": "neutral",
         "displayName": "Hairline",
         "canonical": "#e5e7eb",
-        "tonalRamp": ["#1b1d21", "#43464b", "#6e7278", "#a9adb3", "#d8dadf", "#e7e9ec", "#f0f1f3", "#f8f9fa"]
+        "tonalRamp": ["#1b1d21", "#43464b", "#6e7278", "#a9adb3", "#d8dadf", "#e7e9ec", "#f0f1f3", "#f8f9fa"],
+        "dark": {
+          "displayName": "Hairline, dark",
+          "canonical": "#262b33",
+          "tonalRamp": ["#121519", "#181c21", "#1e2229", "#242830", "#262b33", "#2f343c", "#383e46", "#414852"]
+        }
       },
       "line-strong": {
         "role": "neutral",
         "displayName": "Hairline Strong",
         "canonical": "#d1d5db",
-        "tonalRamp": ["#17191c", "#3c3f45", "#676b71", "#a0a5ab", "#cdd1d7", "#dcdfe4", "#ebedf0", "#f6f7f9"]
+        "tonalRamp": ["#17191c", "#3c3f45", "#676b71", "#a0a5ab", "#cdd1d7", "#dcdfe4", "#ebedf0", "#f6f7f9"],
+        "dark": {
+          "displayName": "Hairline Strong, dark",
+          "canonical": "#363c45",
+          "tonalRamp": ["#14171c", "#1a1e23", "#20242a", "#262b33", "#2d323a", "#363c45", "#3f4550", "#484f5a"]
+        }
       },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
         "canonical": "#111827",
-        "tonalRamp": ["#0b0f1a", "#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db"]
+        "tonalRamp": ["#0b0f1a", "#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db"],
+        "dark": {
+          "displayName": "Ink, dark",
+          "canonical": "#e8eaed",
+          "tonalRamp": ["#0b0d10", "#2b2e33", "#4b4f56", "#6b7078", "#8b9099", "#abb0b8", "#c9cdd3", "#e8eaed"]
+        }
       },
       "ink-muted": {
         "role": "neutral",
         "displayName": "Ink Muted",
         "canonical": "#4b5563",
-        "tonalRamp": ["#0d1119", "#161b26", "#232a35", "#333c49", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db"]
+        "tonalRamp": ["#0d1119", "#161b26", "#232a35", "#333c49", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db"],
+        "dark": {
+          "displayName": "Ink Muted, dark",
+          "canonical": "#a4acb7",
+          "tonalRamp": ["#0b0d10", "#262a30", "#40454d", "#5b6069", "#787e87", "#949aa4", "#a4acb7", "#c3c9d1"]
+        }
       },
       "ink-subtle": {
         "role": "neutral",
         "displayName": "Ink Subtle",
         "canonical": "#6b7280",
-        "tonalRamp": ["#0f1218", "#1b1f27", "#2b313a", "#3f4650", "#565d68", "#6b7280", "#9ca3af", "#d1d5db"]
+        "tonalRamp": ["#0f1218", "#1b1f27", "#2b313a", "#3f4650", "#565d68", "#6b7280", "#9ca3af", "#d1d5db"],
+        "dark": {
+          "displayName": "Ink Subtle, dark",
+          "canonical": "#8b929c",
+          "tonalRamp": ["#0b0d10", "#242830", "#3c414a", "#545a64", "#6b717b", "#8b929c", "#a9afb8", "#c6cbd2"]
+        }
       },
       "accent": {
         "role": "primary",
         "displayName": "Instrument Blue",
         "canonical": "#2563eb",
-        "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"]
+        "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"],
+        "dark": {
+          "displayName": "Instrument Blue, dark",
+          "canonical": "#4a8cff",
+          "tonalRamp": ["#0b1b3d", "#122a5c", "#1a3f85", "#2a5fb8", "#3d78dd", "#4a8cff", "#7aabff", "#a9c8ff"]
+        }
       },
       "accent-strong": {
         "role": "primary",
         "displayName": "Instrument Blue, pressed",
         "canonical": "#1d4ed8",
-        "tonalRamp": ["#13214a", "#1a3277", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"]
+        "tonalRamp": ["#13214a", "#1a3277", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"],
+        "dark": {
+          "displayName": "Instrument Blue pressed, dark",
+          "canonical": "#6ba1ff",
+          "tonalRamp": ["#0d2149", "#153166", "#1f4590", "#2f5fc0", "#4878e0", "#6ba1ff", "#92b9ff", "#bcd3ff"]
+        }
       },
       "accent-wash": {
         "role": "primary",
         "displayName": "Instrument Wash",
         "canonical": "#eff6ff",
-        "tonalRamp": ["#0b1b3d", "#152c5c", "#1d4ed8", "#3b82f6", "#93c5fd", "#bfdbfe", "#dbeafe", "#eff6ff"]
+        "tonalRamp": ["#0b1b3d", "#152c5c", "#1d4ed8", "#3b82f6", "#93c5fd", "#bfdbfe", "#dbeafe", "#eff6ff"],
+        "dark": {
+          "displayName": "Instrument Wash, dark",
+          "canonical": "#16233d",
+          "tonalRamp": ["#070d18", "#0d1524", "#121d31", "#16233d", "#1c2c4a", "#233658", "#2b4167", "#334d77"]
+        }
+      },
+      "on-accent": {
+        "role": "primary",
+        "displayName": "On Accent",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#111827", "#374151", "#6b7280", "#9ca3af", "#d1d5db", "#e5e7eb", "#f3f4f6", "#ffffff"],
+        "dark": {
+          "displayName": "On Accent, dark",
+          "canonical": "#0b0d10",
+          "tonalRamp": ["#08090b", "#0f1114", "#16181c", "#1d2025", "#24272d", "#2b2e35", "#33373e", "#3c4048"]
+        }
+      },
+      "scrim": {
+        "role": "neutral",
+        "displayName": "Scrim",
+        "canonical": "rgb(17 24 39 / 0.25)",
+        "tonalRamp": ["#111827", "#374151", "#6b7280", "#9ca3af", "#d1d5db", "#e5e7eb", "#f3f4f6", "#ffffff"],
+        "dark": {
+          "displayName": "Scrim, dark",
+          "canonical": "rgb(0 0 0 / 0.68)",
+          "tonalRamp": ["#000000", "#0a0a0a", "#141414", "#1e1e1e", "#282828", "#323232", "#3c3c3c", "#464646"]
+        }
       },
       "contribution-empty": {
         "role": "data",
         "displayName": "Contribution Empty",
         "canonical": "#ebedf0",
-        "tonalRamp": ["#0d1211", "#1f2a24", "#33463a", "#4d6553", "#6f8a74", "#93ae97", "#b9cbbb", "#ebedf0"]
+        "tonalRamp": ["#0d1211", "#1f2a24", "#33463a", "#4d6553", "#6f8a74", "#93ae97", "#b9cbbb", "#ebedf0"],
+        "dark": {
+          "displayName": "Contribution Empty, dark",
+          "canonical": "#161b22",
+          "tonalRamp": ["#0d1117", "#161b22", "#1f242c", "#282d35", "#31363e", "#3a3f47", "#434850", "#4c5159"]
+        }
       },
       "contribution-low": {
         "role": "data",
         "displayName": "Contribution Low",
         "canonical": "#9be9a8",
-        "tonalRamp": ["#0b2416", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#4ade80", "#9be9a8"]
+        "tonalRamp": ["#0b2416", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#4ade80", "#9be9a8"],
+        "dark": {
+          "displayName": "Contribution Low, dark",
+          "canonical": "#0e4429",
+          "tonalRamp": ["#04150c", "#0a2c18", "#0e4429", "#12612f", "#15803d", "#1a9d4b", "#22c55e", "#4ade80"]
+        }
       },
       "contribution-mid": {
         "role": "data",
         "displayName": "Contribution Mid",
         "canonical": "#40c463",
-        "tonalRamp": ["#072012", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#40c463"]
+        "tonalRamp": ["#072012", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#40c463"],
+        "dark": {
+          "displayName": "Contribution Mid, dark",
+          "canonical": "#006d32",
+          "tonalRamp": ["#03110a", "#072616", "#006d32", "#00873d", "#00a349", "#12b45a", "#2fca74", "#6ee7a0"]
+        }
       },
       "contribution-high": {
         "role": "data",
         "displayName": "Contribution High",
         "canonical": "#30a14e",
-        "tonalRamp": ["#061c0f", "#0f3d22", "#14532d", "#166534", "#15803d", "#22c55e", "#4ade80", "#30a14e"]
+        "tonalRamp": ["#061c0f", "#0f3d22", "#14532d", "#166534", "#15803d", "#22c55e", "#4ade80", "#30a14e"],
+        "dark": {
+          "displayName": "Contribution High, dark",
+          "canonical": "#26a641",
+          "tonalRamp": ["#03150a", "#07301a", "#0b4c24", "#12682f", "#1a853a", "#26a641", "#4ec85f", "#7ee08a"]
+        }
       },
       "contribution-peak": {
         "role": "data",
         "displayName": "Contribution Peak",
         "canonical": "#216e39",
-        "tonalRamp": ["#041209", "#0c2c18", "#123f22", "#14532d", "#166534", "#15803d", "#22c55e", "#216e39"]
+        "tonalRamp": ["#041209", "#0c2c18", "#123f22", "#14532d", "#166534", "#15803d", "#22c55e", "#216e39"],
+        "dark": {
+          "displayName": "Contribution Peak, dark",
+          "canonical": "#39d353",
+          "tonalRamp": ["#041a0c", "#093a19", "#105a24", "#187a2f", "#1f9a3b", "#39d353", "#6ce07f", "#9becab"]
+        }
+      },
+      "duel-first": {
+        "role": "data",
+        "displayName": "Duel First",
+        "canonical": "#111827",
+        "tonalRamp": ["#0b0f1a", "#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db"],
+        "dark": {
+          "displayName": "Duel First, dark",
+          "canonical": "#e8eaed",
+          "tonalRamp": ["#0b0d10", "#2b2e33", "#4b4f56", "#6b7078", "#8b9099", "#abb0b8", "#c9cdd3", "#e8eaed"]
+        }
+      },
+      "duel-first-weak": {
+        "role": "data",
+        "displayName": "Duel First, weak",
+        "canonical": "#6b7280",
+        "tonalRamp": ["#0f1218", "#1b1f27", "#2b313a", "#3f4650", "#565d68", "#6b7280", "#9ca3af", "#d1d5db"],
+        "dark": {
+          "displayName": "Duel First weak, dark",
+          "canonical": "#8b929c",
+          "tonalRamp": ["#0b0d10", "#242830", "#3c414a", "#545a64", "#6b717b", "#8b929c", "#a9afb8", "#c6cbd2"]
+        }
+      },
+      "duel-second": {
+        "role": "data",
+        "displayName": "Duel Second",
+        "canonical": "#2563eb",
+        "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"],
+        "dark": {
+          "displayName": "Duel Second, dark",
+          "canonical": "#4a8cff",
+          "tonalRamp": ["#0b1b3d", "#122a5c", "#1a3f85", "#2a5fb8", "#3d78dd", "#4a8cff", "#7aabff", "#a9c8ff"]
+        }
       },
       "duel-second-weak": {
         "role": "data",
         "displayName": "Duel Second, weak",
         "canonical": "#93c5fd",
-        "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe"]
+        "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe"],
+        "dark": {
+          "displayName": "Duel Second weak, dark",
+          "canonical": "#2b4f8f",
+          "tonalRamp": ["#0a162c", "#0f203f", "#152c56", "#1b376c", "#20427f", "#2b4f8f", "#3a64a8", "#4f7cbe"]
+        }
+      },
+      "duel-tie": {
+        "role": "data",
+        "displayName": "Duel Tie",
+        "canonical": "#d1d5db",
+        "tonalRamp": ["#17191c", "#3c3f45", "#676b71", "#a0a5ab", "#cdd1d7", "#dcdfe4", "#ebedf0", "#f6f7f9"],
+        "dark": {
+          "displayName": "Duel Tie, dark",
+          "canonical": "#363c45",
+          "tonalRamp": ["#14171c", "#1a1e23", "#20242a", "#262b33", "#2d323a", "#363c45", "#3f4550", "#484f5a"]
+        }
+      },
+      "duel-none": {
+        "role": "data",
+        "displayName": "Duel None",
+        "canonical": "#f3f4f6",
+        "tonalRamp": ["#1f2124", "#484b50", "#75797f", "#aeb1b6", "#dbdde0", "#e9ebee", "#f4f5f7", "#fafbfc"],
+        "dark": {
+          "displayName": "Duel None, dark",
+          "canonical": "#1c2026",
+          "tonalRamp": ["#0c0e11", "#131619", "#1a1e23", "#21252b", "#282d34", "#2f343c", "#363c45", "#3d444d"]
+        }
       },
       "language-fallback": {
         "role": "data",
@@ -140,11 +302,27 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The product name on the home page. Appears once in the product."
+        "purpose": "The product name on the home page. It appears once in the product."
       },
       "headline": {
         "displayName": "Headline",
         "purpose": "The person's name in the identity band, and the duel chooser title. The one place a large type meets a real human."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "A supporting stat value, and the percentage in the middle of the language ring. A number is set like a number, not like a heading."
+      },
+      "peak": {
+        "displayName": "Peak",
+        "purpose": "The one number the report is about: the year's total, in the first tile of the identity band. The largest type in the product, once per screen."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The sentence under the product name on the home page."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "The two section headings on the home page."
       },
       "title": {
         "displayName": "Title",
@@ -156,7 +334,7 @@
       },
       "control": {
         "displayName": "Control",
-        "purpose": "Buttons, inputs, the language toggle, navigation links and stat values."
+        "purpose": "Buttons, inputs, the language toggle, navigation links and the value of a stat tile's label row."
       },
       "label": {
         "displayName": "Label",
@@ -176,8 +354,8 @@
       },
       {
         "name": "scrim",
-        "value": "rgb(17 24 39 / 0.25)",
-        "purpose": "The overlay behind the token dialog."
+        "value": "var(--scrim)",
+        "purpose": "The overlay behind the token dialog: ink at 25% on the light ground, black at 68% on the dark one."
       }
     ],
     "motion": [
@@ -211,15 +389,15 @@
       "refersTo": "button-primary",
       "description": "The single filled action on a screen. One per screen at most.",
       "html": "<button class=\"ds-btn-primary\">Ver informe</button>",
-      "css": ".ds-btn-primary { display: inline-flex; height: 36px; align-items: center; justify-content: center; gap: 8px; border: none; border-radius: 6px; background: var(--color-accent); color: var(--color-ground); padding: 0 14px; font-family: inherit; font-size: 14px; font-weight: 500; line-height: 20px; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: var(--color-accent-strong); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; } .ds-btn-primary:disabled { background: var(--color-surface-sunken); color: var(--color-ink-subtle); opacity: 0.5; cursor: not-allowed; }"
+      "css": ".ds-btn-primary { display: inline-flex; height: 36px; align-items: center; justify-content: center; gap: 8px; border: none; border-radius: 6px; background: var(--accent); color: var(--on-accent); padding: 0 14px; font-family: inherit; font-size: 14px; font-weight: 500; line-height: 20px; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: var(--accent-strong); } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } .ds-btn-primary:disabled { background: var(--surface-sunken); color: var(--ink-subtle); opacity: 0.5; cursor: not-allowed; }"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "The default control: a hairline-bordered button on the white ground.",
+      "description": "The default control: a hairline-bordered button on the ground.",
       "html": "<button class=\"ds-btn-ghost\">Conectar token</button>",
-      "css": ".ds-btn-ghost { display: inline-flex; height: 36px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-ground); color: var(--color-ink); padding: 0 14px; font-family: inherit; font-size: 14px; font-weight: 500; line-height: 20px; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-ghost:hover { background: var(--color-surface); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }"
+      "css": ".ds-btn-ghost { display: inline-flex; height: 36px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--ground); color: var(--ink); padding: 0 14px; font-family: inherit; font-size: 14px; font-weight: 500; line-height: 20px; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-ghost:hover { background: var(--surface); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }"
     },
     {
       "name": "Search Field",
@@ -227,52 +405,52 @@
       "refersTo": "input",
       "description": "The header and hero search: a hairline-bordered field with a hand-drawn magnifier.",
       "html": "<div class=\"ds-search\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"7\" r=\"4.5\"></circle><path d=\"M10.5 10.5 14 14\" stroke-linecap=\"round\"></path></svg><input type=\"search\" placeholder=\"Usuario de GitHub\" aria-label=\"Buscar un usuario de GitHub\"></div>",
-      "css": ".ds-search { display: flex; height: 36px; align-items: center; gap: 8px; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-ground); padding: 0 12px; transition: border-color 150ms ease; } .ds-search:focus-within { border-color: var(--color-accent); } .ds-search svg { width: 16px; height: 16px; flex: 0 0 auto; fill: none; stroke: var(--color-ink-subtle); stroke-width: 1.5; } .ds-search input { width: 100%; border: none; background: transparent; outline: none; font-family: inherit; font-size: 14px; line-height: 20px; color: var(--color-ink); } .ds-search input::placeholder { color: var(--color-ink-subtle); }"
+      "css": ".ds-search { display: flex; height: 36px; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--ground); padding: 0 12px; transition: border-color 150ms ease; } .ds-search:focus-within { border-color: var(--accent); } .ds-search svg { width: 16px; height: 16px; flex: 0 0 auto; fill: none; stroke: var(--ink-subtle); stroke-width: 1.5; } .ds-search input { width: 100%; border: none; background: transparent; outline: none; font-family: inherit; font-size: 14px; line-height: 20px; color: var(--ink); } .ds-search input::placeholder { color: var(--ink-subtle); }"
     },
     {
       "name": "Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "The container every reading sits in: white on white, separated by a hairline.",
+      "description": "The container every reading sits in: the ground on the ground, separated by a hairline.",
       "html": "<section class=\"ds-card\"><header class=\"ds-card-header\"><h2 class=\"ds-card-title\">Contributions · last 12 months</h2><span class=\"ds-card-meta\">366 días</span></header><div class=\"ds-card-body\"><p class=\"ds-card-text\">El informe se lee de un vistazo.</p></div></section>",
-      "css": ".ds-card { border: 1px solid var(--color-line); border-radius: 8px; background: var(--color-ground); } .ds-card-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--color-line); } .ds-card-title { margin: 0; font-size: 14px; font-weight: 600; line-height: 20px; color: var(--color-ink); } .ds-card-meta { font-size: 12px; line-height: 16px; color: var(--color-ink-muted); font-variant-numeric: tabular-nums; } .ds-card-body { padding: 20px 24px; } .ds-card-text { margin: 0; font-size: 14px; line-height: 20px; color: var(--color-ink-muted); }"
+      "css": ".ds-card { border: 1px solid var(--line); border-radius: 8px; background: var(--ground); } .ds-card-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--line); } .ds-card-title { margin: 0; font-size: 14px; font-weight: 600; line-height: 20px; color: var(--ink); } .ds-card-meta { font-size: 12px; line-height: 16px; color: var(--ink-muted); font-variant-numeric: tabular-nums; } .ds-card-body { padding: 20px 24px; } .ds-card-text { margin: 0; font-size: 14px; line-height: 20px; color: var(--ink-muted); }"
     },
     {
       "name": "Stat Tile",
       "kind": "custom",
       "refersTo": "stat-tile",
-      "description": "A metric column: an 11px tracked label over a tabular value and a muted hint.",
-      "html": "<div class=\"ds-stat\"><dt class=\"ds-stat-label\">Contribuciones</dt><dd class=\"ds-stat-value\">3,743</dd><p class=\"ds-stat-hint\">Días activos: 355</p></div>",
-      "css": ".ds-stat { padding: 0 12px; } .ds-stat-label { font-size: 11px; font-weight: 500; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-subtle); } .ds-stat-value { margin: 4px 0 0; font-size: 24px; font-weight: 600; line-height: 32px; color: var(--color-ink); font-variant-numeric: tabular-nums; } .ds-stat-hint { margin: 2px 0 0; font-size: 12px; line-height: 16px; color: var(--color-ink-muted); }"
+      "description": "A metric column: an 11px tracked label over a tabular value and a muted hint. The lead tile sets the peak figure.",
+      "html": "<div class=\"ds-stat\"><dt class=\"ds-stat-label\">Contribuciones</dt><dd class=\"ds-stat-value ds-stat-value--peak\">3,743</dd><p class=\"ds-stat-hint\">Días activos: 355</p></div>",
+      "css": ".ds-stat { padding: 0 12px; } .ds-stat-label { font-size: 11px; font-weight: 500; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-subtle); } .ds-stat-value { margin: 4px 0 0; font-size: 28px; font-weight: 600; line-height: 32px; color: var(--ink); font-variant-numeric: tabular-nums; } .ds-stat-value--peak { font-size: 40px; line-height: 44px; letter-spacing: -0.025em; } .ds-stat-hint { margin: 2px 0 0; font-size: 12px; line-height: 16px; color: var(--ink-muted); }"
     },
     {
       "name": "Contribution Grid",
       "kind": "custom",
-      "description": "The centrepiece: seven rows of week columns on GitHub's five-step green, with the legend beneath.",
-      "html": "<div><div class=\"ds-grid\"><div class=\"ds-grid-col\"><span class=\"ds-cell ds-cell-4\"></span><span class=\"ds-cell ds-cell-1\"></span><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-2\"></span><span class=\"ds-cell ds-cell-3\"></span><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-0\"></span></div><div class=\"ds-grid-col\"><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-2\"></span><span class=\"ds-cell ds-cell-4\"></span><span class=\"ds-cell ds-cell-1\"></span><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-3\"></span><span class=\"ds-cell ds-cell-0\"></span></div></div><div class=\"ds-legend\"><span>Menos</span><span class=\"ds-swatch\" style=\"background:#ebedf0\"></span><span class=\"ds-swatch\" style=\"background:#9be9a8\"></span><span class=\"ds-swatch\" style=\"background:#40c463\"></span><span class=\"ds-swatch\" style=\"background:#30a14e\"></span><span class=\"ds-swatch\" style=\"background:#216e39\"></span><span>Más</span></div></div>",
-      "css": ".ds-grid { display: flex; gap: 3px; } .ds-grid-col { display: flex; flex-direction: column; gap: 3px; } .ds-cell { width: 10px; height: 10px; border-radius: 2px; display: block; } .ds-cell-0 { background: #ebedf0; } .ds-cell-1 { background: #9be9a8; } .ds-cell-2 { background: #40c463; } .ds-cell-3 { background: #30a14e; } .ds-cell-4 { background: #216e39; } .ds-legend { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12px; line-height: 16px; color: var(--color-ink-subtle); } .ds-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }"
+      "description": "The centrepiece: seven rows of week columns on the contribution scale, which flips with the theme, with the legend beneath.",
+      "html": "<div><div class=\"ds-grid\"><div class=\"ds-grid-col\"><span class=\"ds-cell ds-cell-4\"></span><span class=\"ds-cell ds-cell-1\"></span><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-2\"></span><span class=\"ds-cell ds-cell-3\"></span><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-0\"></span></div><div class=\"ds-grid-col\"><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-2\"></span><span class=\"ds-cell ds-cell-4\"></span><span class=\"ds-cell ds-cell-1\"></span><span class=\"ds-cell ds-cell-0\"></span><span class=\"ds-cell ds-cell-3\"></span><span class=\"ds-cell ds-cell-0\"></span></div></div><div class=\"ds-legend\"><span>Menos</span><span class=\"ds-swatch ds-cell-0\"></span><span class=\"ds-swatch ds-cell-1\"></span><span class=\"ds-swatch ds-cell-2\"></span><span class=\"ds-swatch ds-cell-3\"></span><span class=\"ds-swatch ds-cell-4\"></span><span>Más</span></div></div>",
+      "css": ".ds-grid { display: flex; gap: 3px; } .ds-grid-col { display: flex; flex-direction: column; gap: 3px; } .ds-cell { width: 10px; height: 10px; border-radius: 2px; display: block; } .ds-cell-0 { background: var(--contribution-0); } .ds-cell-1 { background: var(--contribution-1); } .ds-cell-2 { background: var(--contribution-2); } .ds-cell-3 { background: var(--contribution-3); } .ds-cell-4 { background: var(--contribution-4); } .ds-legend { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12px; line-height: 16px; color: var(--ink-subtle); } .ds-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }"
     },
     {
       "name": "Source Note",
       "kind": "custom",
       "description": "The proof at the foot of every chart: the endpoint, the measure, and what is missing.",
       "html": "<p class=\"ds-source\"><span class=\"ds-source-label\">Fuente</span><span class=\"ds-source-endpoint\">GET /users/{username}/events/public</span><span aria-hidden=\"true\">·</span><span>Pushes públicos</span></p>",
-      "css": ".ds-source { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; font-size: 12px; line-height: 16px; color: var(--color-ink-subtle); } .ds-source-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; } .ds-source-endpoint { font-weight: 500; color: var(--color-ink-muted); }"
+      "css": ".ds-source { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; font-size: 12px; line-height: 16px; color: var(--ink-subtle); } .ds-source-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; } .ds-source-endpoint { font-weight: 500; color: var(--ink-muted); }"
     },
     {
-      "name": "Language Toggle",
-      "kind": "chip",
-      "refersTo": "language-segment-active",
-      "description": "A segmented control; the active segment takes the accent wash and the accent ink.",
-      "html": "<div class=\"ds-segment\" role=\"group\" aria-label=\"Idioma\"><button type=\"button\" aria-pressed=\"true\">ES</button><button type=\"button\" aria-pressed=\"false\">EN</button></div>",
-      "css": ".ds-segment { display: inline-flex; height: 36px; align-items: center; gap: 2px; padding: 2px; border: 1px solid var(--color-line); border-radius: 6px; background: var(--color-ground); } .ds-segment button { height: 28px; border: none; border-radius: 4px; background: transparent; padding: 0 8px; font-family: inherit; font-size: 12px; font-weight: 500; line-height: 16px; color: var(--color-ink-muted); cursor: pointer; transition: background-color 150ms ease; } .ds-segment button:hover { color: var(--color-ink); } .ds-segment button[aria-pressed=\"true\"] { background: var(--color-accent-wash); color: var(--color-accent); }"
+      "name": "Theme Toggle",
+      "kind": "custom",
+      "refersTo": "theme-toggle",
+      "description": "The header switch between the two grounds: a 36px hairline square with a hand-drawn sun or crescent.",
+      "html": "<button class=\"ds-theme\" aria-label=\"Cambiar al tema claro\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"3.5\"></circle><path d=\"M10 2v1.5M10 16.5V18M18 10h-1.5M3.5 10H2M15.7 4.3l-1 1M5.3 14.7l-1 1M15.7 15.7l-1-1M5.3 5.3l-1-1\"></path></svg></button>",
+      "css": ".ds-theme { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 6px; background: var(--ground); color: var(--ink-muted); padding: 0; cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-theme:hover { background: var(--surface); color: var(--ink); } .ds-theme:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } .ds-theme svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }"
     },
     {
       "name": "Verdict Row",
       "kind": "custom",
       "description": "Two accounts measured head to head: the first in ink, the second in the accent, on a sunken track.",
       "html": "<div class=\"ds-verdict\"><span class=\"ds-verdict-num\">107</span><div class=\"ds-verdict-bars\"><span class=\"ds-verdict-track\"><span class=\"ds-verdict-fill\" style=\"width:80%\"></span></span><span class=\"ds-verdict-track\"><span class=\"ds-verdict-fill ds-verdict-fill--b\" style=\"width:20%\"></span></span></div><span class=\"ds-verdict-num\">26</span></div>",
-      "css": ".ds-verdict { display: flex; align-items: center; gap: 12px; } .ds-verdict-num { flex: 0 0 64px; width: 64px; text-align: right; font-size: 14px; line-height: 20px; color: var(--color-ink); font-variant-numeric: tabular-nums; } .ds-verdict-bars { flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px; } .ds-verdict-track { display: block; height: 6px; border-radius: 999px; background: var(--color-surface-sunken); overflow: hidden; } .ds-verdict-fill { display: block; height: 100%; border-radius: 999px; background: var(--color-ink); } .ds-verdict-fill--b { background: var(--color-accent); }"
+      "css": ".ds-verdict { display: flex; align-items: center; gap: 12px; } .ds-verdict-num { flex: 0 0 64px; width: 64px; text-align: right; font-size: 14px; line-height: 20px; color: var(--ink); font-variant-numeric: tabular-nums; } .ds-verdict-bars { flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px; } .ds-verdict-track { display: block; height: 6px; border-radius: 999px; background: var(--surface-sunken); overflow: hidden; } .ds-verdict-fill { display: block; height: 100%; border-radius: 999px; background: var(--duel-first); } .ds-verdict-fill--b { background: var(--duel-second); }"
     },
     {
       "name": "Dialog",
@@ -280,15 +458,16 @@
       "refersTo": "dialog",
       "description": "The token prompt: a scrim, a hairline panel, and the only shadow in the product.",
       "html": "<div><div class=\"ds-dialog-scrim\"></div><div class=\"ds-dialog\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Token\"><h3 class=\"ds-dialog-title\">Conectar un token</h3><p class=\"ds-dialog-body\">El token se queda en este navegador.</p></div></div>",
-      "css": ".ds-dialog-scrim { position: fixed; inset: 0; background: rgb(17 24 39 / 0.25); } .ds-dialog { position: relative; width: 448px; max-width: calc(100% - 32px); margin: 96px auto 0; border: 1px solid var(--color-line); border-radius: 8px; background: var(--color-ground); padding: 24px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); } .ds-dialog-title { margin: 0; font-size: 16px; font-weight: 600; line-height: 24px; color: var(--color-ink); } .ds-dialog-body { margin: 12px 0 0; font-size: 14px; line-height: 26px; color: var(--color-ink-muted); }"
+      "css": ".ds-dialog-scrim { position: fixed; inset: 0; background: var(--scrim); } .ds-dialog { position: relative; width: 448px; max-width: calc(100% - 32px); margin: 96px auto 0; border: 1px solid var(--line); border-radius: 8px; background: var(--ground); padding: 24px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); } .ds-dialog-title { margin: 0; font-size: 16px; font-weight: 600; line-height: 24px; color: var(--ink); } .ds-dialog-body { margin: 12px 0 0; font-size: 14px; line-height: 26px; color: var(--ink-muted); }"
     }
   ],
   "narrative": {
     "northStar": "The Plain Instrument",
-    "overview": "An instrument that reports plainly. Not a showcase that flatters. This is the north star I have named for the built world; it is my reading of the direction contract and of the shipped code, not a phrase the user chose. What the user did choose is recorded in PRODUCT.md as a durable brand commitment: on 2026-10-19 they were offered seven directed visual worlds and declined them all, taking instead the conventional product dashboard — the arrangement a visitor already expects — played straight, without irony and without a smuggled quirk. The craft bar is named and fixed: GitHub Skyline for data fidelity, Carbon for typographic finish, Spotify Wrapped for single-screen data narrative. \"Plain\" here means finished, not plain: the category standard executed at full fidelity.\n\nConfirmed by the direction contract: a light neutral ground; exactly one accent hue, blue; hairline-bordered cards; one sans at three weights; sentence-case headings; no gradients, no glow, no shadow heavier than a hairline on resting surfaces; a 12-column grid; the contribution grid as the centerpiece of the report; data colour exempt from the one-accent rule; the source note at the foot of every chart; the second account in the duel carried by the accent.\n\nRead from the built world: that the system should feel like an instrument panel rather than a magazine — dense, quiet, unhurried; that the only motion in the product is a single entrance, so the eye lands on the data and stays there; that the type is set tight (negative tracking on display and headline sizes) to read as instrumentation rather than marketing; and that the two duel accounts are separated by hue alone — ink for the first, accent for the second — so the comparison never depends on position or on the reader's memory of a legend order.\n\nThe density is deliberate: a report is read by scanning, not by browsing. Rows are hairline-separated, figures are tabular so columns align, and the one place the system relaxes its grid is the home page, which is a reading surface rather than an instrument. Everything else — the report, the duel — is a board of readings with a proof at the foot of each one.",
+    "overview": "An instrument that reports plainly. Not a showcase that flatters. This is the north star I have named for the built world; it is my reading of the direction contract and of the shipped code, not a phrase the user chose. What the user did choose is recorded in PRODUCT.md as a durable brand commitment: on 2026-10-19 they were offered seven directed visual worlds and declined them all, taking instead the conventional product dashboard — the arrangement a visitor already expects — played straight, without irony and without a smuggled quirk. The craft bar is named and fixed: GitHub Skyline for data fidelity, Carbon for typographic finish, Spotify Wrapped for single-screen data narrative. \"Plain\" here means finished, not plain: the category standard executed at full fidelity.\n\nConfirmed by the direction contract (.impeccable/surfaces/*.md): a neutral ground; exactly one accent hue, blue; hairline-bordered cards; one sans at three weights; sentence-case headings; no gradients, no glow, no shadow heavier than a hairline on resting surfaces; a 12-column grid; the contribution grid as the centerpiece of the report; data colour exempt from the one-accent rule; the source note at the foot of every chart; the second account in the duel carried by the accent. The contract was written against a single light ground; the two-theme reading that follows is now itself a confirmed brand commitment, recorded in PRODUCT.md: the interface reads in two themes, switched from the header, chosen by the reader and remembered in this browser.\n\nRead from the built world (my inference, not confirmed by the user): that the system should feel like an instrument panel rather than a magazine — dense, quiet, unhurried; that the only motion in the product is a single entrance, so the eye lands on the data and stays there; that the type is set tight (negative tracking on display and headline sizes) to read as instrumentation rather than marketing; that the two duel accounts are separated by hue alone — ink for the first, accent for the second — so the comparison never depends on position or on the reader's memory of a legend order; and that the dark theme is not a second design but a second ground for the same one, which is why every colour in the product is a token and no component ever names a hex.\n\nThe density is deliberate: a report is read by scanning, not by browsing. Rows are hairline-separated, figures are tabular so columns align, and the one place the system relaxes its grid is the home page, which is a reading surface rather than an instrument. Everything else — the report, the duel — is a board of readings with a proof at the foot of each one.",
     "keyCharacteristics": [
       "One accent hue, spent only on the primary action, focus, and the second account of a duel.",
       "Hairline structure: 1px borders and tonal fills carry all separation; resting surfaces have no shadow.",
+      "One system read on two grounds: the palette inverts, the data scale flips with it.",
       "A single typeface at three weights, tracked tight at display sizes.",
       "Sentence-case headings; uppercase reserved for an 11px tracked label.",
       "Every figure carries its endpoint, its measure, and — when it is partial — what is missing.",
@@ -313,6 +492,11 @@
         "section": "colors"
       },
       {
+        "name": "The Two-Ground Rule",
+        "body": "The system is one system read on two grounds. `:root` and `[data-theme='dark']` declare the same token names with different values, so a component never knows which ground it is standing on and never names a hex of its own. The palette inverts; it does not restyle: the accent stays the accent, the neutral scale flips, and the data scale flips with it, because GitHub's own dark contribution steps are a different set of values rather than a dimmed version of the light ones. `on-accent` exists for the same reason — the dark accent is a bright blue, and a bright blue cannot carry white text at AA, so the text on the accent becomes the ground colour. A theme is a set of token values, never a set of new components.",
+        "section": "colors"
+      },
+      {
         "name": "The Three-Weight Rule",
         "body": "400 for what is written, 500 for what is interactive or labelled, 600 for what is named. No fourth weight, no light weight, no italic anywhere in the product. If a sentence needs to be louder, it needs a heading, not a heavier font.",
         "section": "typography"
@@ -324,7 +508,7 @@
       },
       {
         "name": "The Tabular Number Rule",
-        "body": "Any figure that shares a column, a row of comparisons, or a bar gets font-variant-numeric: tabular-nums (the nums utility). A number that changes must not change the width of the thing beside it.",
+        "body": "Any figure that shares a column, a row of comparisons, or a bar gets `font-variant-numeric: tabular-nums` (the `nums` utility). A number that changes must not change the width of the thing beside it.",
         "section": "typography"
       },
       {
@@ -335,16 +519,18 @@
     ],
     "dos": [
       "Do spend the accent on the primary action, on focus, on the active language-toggle segment, on a hovered link, and on the second account of a duel — and nowhere else.",
-      "Do separate surfaces with a 1px hairline border (#e5e7eb) and a tonal fill, never with a shadow on a resting surface.",
+      "Do separate surfaces with a 1px hairline border and a tonal fill, never with a shadow on a resting surface.",
       "Do put the source note at the foot of every chart, naming the endpoint, the measure, and what is missing when something is partial.",
-      "Do colour the contribution grid with GitHub's five-step green and the language ring with Linguist's own colours, and leave every piece of chrome neutral.",
+      "Do colour the contribution grid with GitHub's five-step scale and the language ring with Linguist's own colours, and leave every piece of chrome neutral.",
       "Do set the first account in a duel in ink and the second in the accent, so the two are separable by hue alone.",
       "Do set figures that share a column in tabular numerals (nums), so a changing value never shifts its neighbour.",
       "Do keep to Archivo at 400, 500 and 600, tracked tight at display sizes and wide at label sizes.",
       "Do write headings in sentence case, and reserve uppercase for the 11px tracked label and the two-letter language codes.",
       "Do keep the contribution grid's geometry fixed — seven rows, week columns — and let the cell size adapt to the window instead.",
       "Do state on screen when the data is partial: the window actually covered, a truncated event feed, a missing token.",
-      "Do animate once: the report's rise entrance (320ms, cubic-bezier(0.2, 0.8, 0.2, 1)), disabled under prefers-reduced-motion."
+      "Do animate once: the report's rise entrance (320ms, cubic-bezier(0.2, 0.8, 0.2, 1)), disabled under prefers-reduced-motion.",
+      "Do read every colour from a token — var(--token) in a chart, the matching utility in a component — so the surface flips with the theme.",
+      "Do give a token a value on both grounds when its meaning changes: the accent wash, the on-accent text, the contribution steps and the duel tones all differ between them."
     ],
     "donts": [
       "Don't add a second accent hue, or spread the accent across a screen as decoration.",
@@ -357,7 +543,9 @@
       "Don't gamify a person's work: no streak-shaming, no confetti, no badges, no invented superlatives about a developer, no claim the product cannot support.",
       "Don't use the GitHub logo as the app's own mark, or the language colours as branding — they are data, shown the way their source shows them.",
       "Don't build a chart that carries no reading; every chart on screen must answer a question the visitor arrived with.",
-      "Don't let anything else move. One entrance on the report, nothing on the duel, nothing on hover."
+      "Don't let anything else move. One entrance on the report, nothing on the duel, nothing on hover.",
+      "Don't hardcode a colour in a component. Read it from a token, so the surface flips with the theme; the only literals in the product are data colour (Linguist's published language colours) and the three rate-limit status hues, which mean the same thing on either ground.",
+      "Don't write a rule against one ground. A rule that only holds on white is not a rule of this system — state both grounds or state neither."
     ]
   }
 }
