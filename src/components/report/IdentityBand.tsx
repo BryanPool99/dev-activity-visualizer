@@ -39,7 +39,7 @@ export function IdentityBand({ profile, metrics }: IdentityBandProps) {
         ) : null}
       </div>
 
-      <dl className="ml-auto flex items-stretch divide-x divide-line">
+      <dl className="ml-auto grid w-full grid-cols-3 divide-x divide-line sm:flex sm:w-auto sm:items-stretch">
         <StatTile
           label={totalLabel}
           value={new Intl.NumberFormat().format(metrics.calendar.total)}
