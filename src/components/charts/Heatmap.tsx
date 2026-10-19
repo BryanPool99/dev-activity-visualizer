@@ -84,7 +84,7 @@ export function Heatmap({
       if (month !== lastMonth) {
         // Two labels need room between them, or they read as one.
         const previous = months[months.length - 1]
-        if (!previous || x - previous.x >= resolvedCellSize * 2.4) {
+        if (!previous || x - previous.x >= resolvedCellSize * 3) {
           months.push({ x, label: month, month })
         }        lastMonth = month
       }
@@ -113,19 +113,22 @@ export function Heatmap({
     const rect = frame.getBoundingClientRect()
     setHovered({
       day,
-      at: { x: event.clientX - rect.left, y: event.clientY - rect.top },
+      at: {
+        x: event.clientX - rect.left + frame.scrollLeft,
+        y: event.clientY - rect.top,
+      },
     })
   }
 
   return (
-    <div className="relative" ref={frameRef}>
+    <div className="relative overflow-x-auto" ref={frameRef}>
       <svg
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
         role="img"
         aria-label={`${name}: ${total} ${unitLabel} across ${activeDays} active days.`}
-        className="max-w-full"
+        className="shrink-0"
       >
         <g transform={`translate(28, 16)`}>
           {monthLabels.map((label) => (
@@ -133,7 +136,7 @@ export function Heatmap({
               key={`${label.month}-${label.x}`}
               x={label.x}
               y={-4}
-              className="fill-ink-subtle text-[10px]"
+              className="fill-ink-subtle text-[11px]"
             >
               {MONTH_LABELS[label.month - 1]}
             </text>
@@ -146,7 +149,7 @@ export function Heatmap({
                 x={-8}
                 y={entry.row * (resolvedCellSize + gap) + resolvedCellSize - 1}
                 textAnchor="end"
-                className="fill-ink-subtle text-[10px]"
+                className="fill-ink-subtle text-[11px]"
               >
                 {entry.label}
               </text>

@@ -33,11 +33,15 @@ export function DuelDial({
 
   const max = Math.max(...countsA, ...countsB, 0)
   const center = size / 2
-  const innerA = size * 0.18
-  const outerA = size * 0.33
-  const innerB = size * 0.36
-  const outerB = size * 0.45
-  const stroke = size * 0.036
+  const innerA = size * 0.17
+  const outerA = size * 0.31
+  const innerB = size * 0.34
+  const outerB = size * 0.41
+  const stroke = size * 0.034
+  const labelRadius = size * 0.47
+  // The shared hour sits in the gap between the two bands: neither account's
+  // colour, exactly where the two of them meet.
+  const markerRadius = (outerA + innerB) / 2
 
   const angle = (hour: number) => (hour / 24) * Math.PI * 2 - Math.PI / 2
 
@@ -107,14 +111,16 @@ export function DuelDial({
 
         {sharedHours.map((hour) => {
           const a = angle(hour)
-          const r = outerB + stroke * 1.1
+          const r = markerRadius
           return (
             <circle
               key={`s-${hour}`}
               cx={center + Math.cos(a) * r}
               cy={center + Math.sin(a) * r}
-              r={stroke * 0.5}
-              fill="#1d4ed8"
+              r={stroke * 0.46}
+              fill="#ffffff"
+              stroke="#111827"
+              strokeWidth={stroke * 0.26}
             />
           )
         })}
@@ -122,7 +128,7 @@ export function DuelDial({
         {HOUR_LABELS.map((label, index) => {
           const hour = index * 3
           const a = angle(hour)
-          const r = outerB + stroke * 2.6
+          const r = labelRadius
           return (
             <text
               key={label}
@@ -130,7 +136,7 @@ export function DuelDial({
               y={center + Math.sin(a) * r}
               textAnchor="middle"
               dominantBaseline="middle"
-              className="fill-ink-subtle text-[10px]"
+              className="fill-ink-subtle text-[11px]"
             >
               {label}
             </text>
@@ -148,7 +154,7 @@ export function DuelDial({
           {nameB}
         </span>
         <span className="flex items-center gap-2">
-          <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
+          <span aria-hidden="true" className="size-2.5 rounded-full border-2 border-ink bg-ground" />
           {t('compare.sharedHours')}
         </span>
       </div>

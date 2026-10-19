@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useI18n } from '../i18n'
 import { useUserReport } from '../hooks/useUserReport'
 import { buildMetrics } from '../lib/metrics'
@@ -9,6 +9,7 @@ import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
 import { ChartCard } from '../components/charts/ChartCard'
 import { DuelGrid } from '../components/compare/DuelGrid'
+import { DuelSummary } from '../components/compare/DuelSummary'
 import { DuelDial } from '../components/compare/DuelDial'
 import { VerdictList } from '../components/compare/VerdictList'
 import { ReportSkeleton } from '../components/report/ReportSkeleton'
@@ -52,14 +53,22 @@ export function Compare() {
           name={queryA.data.profile.login}
           avatar={queryA.data.profile.avatarUrl}
           total={metricsA.calendar.total}
-          unit={metricsA.calendar.measure === 'contributions' ? 'contribuciones' : 'pushes'}
+          unit={
+            metricsA.calendar.measure === 'contributions'
+              ? t('report.unit.contributions')
+              : t('report.unit.pushes')
+          }
         />
         <span className="text-lg font-semibold tracking-tight text-ink-subtle">vs</span>
         <Identity
           name={queryB.data.profile.login}
           avatar={queryB.data.profile.avatarUrl}
           total={metricsB.calendar.total}
-          unit={metricsB.calendar.measure === 'contributions' ? 'contributions' : 'pushes'}
+          unit={
+            metricsB.calendar.measure === 'contributions'
+              ? t('report.unit.contributions')
+              : t('report.unit.pushes')
+          }
         />
       </div>
 
@@ -70,9 +79,14 @@ export function Compare() {
             {sharedDays} {t('compare.daysShared')}
           </span>
         </header>
-        <div className="px-6 pt-1 pb-6">
+        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-6 px-6 pt-1 pb-6">
           <DuelGrid
             days={duel.days}
+            nameA={queryA.data.profile.login}
+            nameB={queryB.data.profile.login}
+          />
+          <DuelSummary
+            duel={duel}
             nameA={queryA.data.profile.login}
             nameB={queryB.data.profile.login}
           />
@@ -143,6 +157,7 @@ function Identity({
 
 function Chooser() {
   const { t } = useI18n()
+  const navigate = useNavigate()
   const [a, setA] = useState('')
   const [b, setB] = useState('')
 
@@ -151,7 +166,7 @@ function Chooser() {
     const first = normalizeUsername(a)
     const second = normalizeUsername(b)
     if (!first || !second) return
-    window.location.assign(`/compare?a=${encodeURIComponent(first)}&b=${encodeURIComponent(second)}`)
+    navigate(`/compare?a=${encodeURIComponent(first)}&b=${encodeURIComponent(second)}`)
   }
 
   return (

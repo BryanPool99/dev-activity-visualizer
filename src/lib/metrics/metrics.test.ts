@@ -25,9 +25,9 @@ describe('buildLanguageMetrics', () => {
   it('sums bytes per language and computes the share', () => {
     const result = buildLanguageMetrics(
       [
-        repo('a', [{ name: 'TypeScript', color: '#3178c6', bytes: 750 }]),
-        repo('b', [{ name: 'TypeScript', color: '#3178c6', bytes: 250 }]),
-        repo('c', [{ name: 'Rust', color: '#dea584', bytes: 500 }]),
+        repo('a', [{ name: 'TypeScript', color: '#9ca3af', bytes: 750 }]),
+        repo('b', [{ name: 'TypeScript', color: '#9ca3af', bytes: 250 }]),
+        repo('c', [{ name: 'Rust', color: '#2563eb', bytes: 500 }]),
       ],
       'bytes',
     )
@@ -36,7 +36,7 @@ describe('buildLanguageMetrics', () => {
     expect(result.total).toBe(1500)
     expect(result.items[0]).toEqual({
       name: 'TypeScript',
-      color: '#3178c6',
+      color: '#9ca3af',
       value: 1000,
       share: 1000 / 1500,
     })

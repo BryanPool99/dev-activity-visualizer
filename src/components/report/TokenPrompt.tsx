@@ -45,7 +45,7 @@ export function TokenPrompt({ days }: TokenPromptProps) {
         <p className="text-sm leading-relaxed text-ink-muted">
           {t('report.partialNotice', { days })}
         </p>
-        <Button variant="primary" onClick={() => setOpen(true)}>
+        <Button variant="ghost" onClick={() => setOpen(true)}>
           {t('report.connectCta')}
         </Button>
       </div>

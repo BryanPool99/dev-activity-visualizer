@@ -29,7 +29,7 @@ export function VerdictList({ verdicts, nameA, nameB }: VerdictListProps) {
       <ul className="divide-y divide-line">
         {verdicts.map((verdict) => {
           const max = Math.max(verdict.a, verdict.b, 1)
-          const label = t(verdict.id as Parameters<typeof t>[0])
+          const label = t(verdict.id)
 
           return (
             <li key={verdict.id} className="py-4 first:pt-0 last:pb-0">

@@ -45,11 +45,14 @@ export function Report() {
   const { profile, sources, completeness } = query.data
 
   return (
-    <div className="px-6 py-6">
+    // One authored entrance for the whole report, and nothing else moving.
+    <div className="rise px-6 py-6">
       <IdentityBand profile={profile} metrics={metrics} />
 
       {completeness === 'partial' ? (
-        <TokenPrompt days={metrics.calendar.windowDays} />
+        <div className="mt-6">
+          <TokenPrompt days={metrics.calendar.windowDays} />
+        </div>
       ) : null}
 
       <div className="mt-6">

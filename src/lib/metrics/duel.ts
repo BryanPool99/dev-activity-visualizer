@@ -1,4 +1,5 @@
 import type { ReportMetrics } from './types'
+import type { TranslationKey } from '../../i18n/dictionary'
 
 export type DuelDay = {
   date: string
@@ -8,7 +9,7 @@ export type DuelDay = {
 }
 
 export type Verdict = {
-  id: string
+  id: TranslationKey
   a: number
   b: number
   /** Which side won. `null` when the reading is a tie. */
@@ -90,9 +91,17 @@ function closestHour(a: ReportMetrics, b: ReportMetrics): number | null {
 }
 
 function buildVerdicts(a: ReportMetrics, b: ReportMetrics): Verdict[] {
+  // The two accounts are read in the same mode, so one total covers both
+  // unless the measures genuinely differ.
+  const sameMeasure = a.calendar.measure === b.calendar.measure
+
   const verdicts: Verdict[] = [
     {
-      id: 'report.totalContributions',
+      id: sameMeasure
+        ? a.calendar.measure === 'contributions'
+          ? 'report.totalContributions'
+          : 'report.totalPushes'
+        : 'report.totalContributions',
       a: a.calendar.total,
       b: b.calendar.total,
       winner: winnerOf(a.calendar.total, b.calendar.total),
@@ -110,24 +119,28 @@ function buildVerdicts(a: ReportMetrics, b: ReportMetrics): Verdict[] {
       winner: winnerOf(a.streaks.longest, b.streaks.longest),
     },
     {
-      id: 'report.totalPushes',
-      a: a.hours.total,
-      b: b.hours.total,
-      winner: winnerOf(a.hours.total, b.hours.total),
-    },
-    {
       id: 'report.publicRepos',
       a: a.repos.total,
       b: b.repos.total,
       winner: winnerOf(a.repos.total, b.repos.total),
     },
     {
-      id: 'report.stars',
+      id: 'compare.verdictStars',
       a: a.repos.stars,
       b: b.repos.stars,
       winner: winnerOf(a.repos.stars, b.repos.stars),
     },
   ]
+
+  // Only when the two sides measure different things is a second total honest.
+  if (!sameMeasure) {
+    verdicts.splice(1, 0, {
+      id: 'report.totalPushes',
+      a: a.hours.total,
+      b: b.hours.total,
+      winner: winnerOf(a.hours.total, b.hours.total),
+    })
+  }
 
   return verdicts
 }
