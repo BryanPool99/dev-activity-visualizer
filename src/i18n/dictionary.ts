@@ -129,7 +129,6 @@ const es = {
   'report.noRepos': 'Sin repositorios públicos que enseñar.',
   'report.noLanguages': 'Sin lenguajes que enseñar.',
   'report.noActivity': 'No hay actividad pública que representar.',
-  'chart.scrollHint': 'Desliza para ver el año entero →',
   'report.lede.in': 'en',
   'report.lede.days': 'días',
   'report.lede.rest':
@@ -296,7 +295,6 @@ const en: Dictionary = {
   'report.noRepos': 'No public repositories to show.',
   'report.noLanguages': 'No languages to show.',
   'report.noActivity': 'No public activity to chart.',
-  'chart.scrollHint': 'Scroll to see the whole year →',
   'report.lede.in': 'over',
   'report.lede.days': 'days',
   'report.lede.rest':
