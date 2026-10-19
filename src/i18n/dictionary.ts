@@ -55,6 +55,7 @@ const es = {
   'compare.chooseBody':
     'Pon dos nombres y el informe los pone uno junto al otro: quién empuja más cada día, a qué hora trabaja cada uno y qué métricas se llevan.',
   'compare.daysShared': 'días en común',
+  'compare.daysLed': 'Días que lideró cada uno',
   'compare.verdictStars': 'Estrellas',
   'compare.verdicts': 'Cara a cara',
 
@@ -214,6 +215,7 @@ const en: Dictionary = {
   'compare.chooseBody':
     'Enter two names and the report sets them next to each other: who pushed more on each day, the hour each one works at, and which metrics they take.',
   'compare.daysShared': 'days in common',
+  'compare.daysLed': 'Days each one led',
   'compare.verdictStars': 'Stars',
 
   'home.placeholder': 'Type a GitHub username to see their report.',

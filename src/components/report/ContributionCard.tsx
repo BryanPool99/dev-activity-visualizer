@@ -5,6 +5,7 @@ import { ContributionLegend } from '../charts/ContributionLegend'
 import { SourceNote } from '../charts/SourceNote'
 import { Card } from '../ui/Card'
 import { TopDays } from './TopDays'
+import { TopDaysInline } from './TopDaysInline'
 import type { ReportMetrics } from '../../lib/metrics/types'
 
 type ContributionCardProps = {
@@ -53,6 +54,9 @@ export function ContributionCard({ name, metrics, source }: ContributionCardProp
         // A short window reads better as one column per day, filling the card.
         <div className="px-6 pt-1 pb-4">
           <DayColumns days={calendar.days} unitLabel={unit} name={name} />
+          <div className="mt-4">
+            <TopDaysInline days={calendar.days} unitLabel={unit} />
+          </div>
         </div>
       )}
 

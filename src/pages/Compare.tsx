@@ -9,6 +9,7 @@ import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
 import { ChartCard } from '../components/charts/ChartCard'
 import { DuelGrid } from '../components/compare/DuelGrid'
+import { DuelSummary } from '../components/compare/DuelSummary'
 import { DuelDial } from '../components/compare/DuelDial'
 import { VerdictList } from '../components/compare/VerdictList'
 import { ReportSkeleton } from '../components/report/ReportSkeleton'
@@ -78,9 +79,14 @@ export function Compare() {
             {sharedDays} {t('compare.daysShared')}
           </span>
         </header>
-        <div className="px-6 pt-1 pb-6">
+        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-6 px-6 pt-1 pb-6">
           <DuelGrid
             days={duel.days}
+            nameA={queryA.data.profile.login}
+            nameB={queryB.data.profile.login}
+          />
+          <DuelSummary
+            duel={duel}
             nameA={queryA.data.profile.login}
             nameB={queryB.data.profile.login}
           />
