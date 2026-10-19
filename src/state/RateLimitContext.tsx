@@ -1,11 +1,9 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
+import { subscribeRateLimit } from '../lib/github/rate-limit'
+import type { RateLimitSnapshot } from '../lib/github/rate-limit'
 
-export type RateLimitState = {
-  remaining: number
-  limit: number
-  resetAt: number
-} | null
+export type RateLimitState = RateLimitSnapshot | null
 
 type RateLimitValue = {
   rateLimit: RateLimitState
@@ -18,6 +16,10 @@ export function RateLimitProvider({ children }: { children: ReactNode }) {
   const [rateLimit, setRateLimit] = useState<RateLimitState>(null)
 
   const report = useCallback((next: RateLimitState) => setRateLimit(next), [])
+
+  useEffect(() => {
+    return subscribeRateLimit((snapshot) => setRateLimit(snapshot))
+  }, [])
 
   const value = useMemo(() => ({ rateLimit, report }), [rateLimit, report])
 

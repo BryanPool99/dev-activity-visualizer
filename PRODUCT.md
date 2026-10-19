@@ -42,6 +42,8 @@ Confirmed functionality:
 Hard constraints and known limits:
 
 - Unauthenticated REST: 60 requests/hour, and `/users/{u}/events/public` exposes roughly the last 90 days of activity, capped at 300 events. Without a token the report is explicitly partial and says so on screen.
+- **The public event feed no longer carries the commit list.** A `PushEvent` payload holds only the ref, the head sha and the push id, so the time-of-day reading is built from push events — one mark per push — and the number of commits inside a push is unknown. The interface says "pushes", not "commits", wherever that source is used.
+- **GitHub serves only the most recent 300 events per account** (three pages of 100). The window therefore varies: a few days for a very active developer, up to about 90 days for a quiet one. The report states the window it actually covers, and says when the sample hit the ceiling.
 - Authenticated REST/GraphQL: 5000 requests/hour, and GraphQL exposes the full contribution calendar for the year.
 - The GraphQL contribution calendar counts contributions (commits, issues, pull requests), not commits alone. The interface must say "contributions", not "commits", for that data.
 - Language breakdown is per repository, not per commit; the GitHub API does not expose the language of an individual commit.
