@@ -17,9 +17,9 @@ export function DuelSummary({ duel, nameA, nameB }: DuelSummaryProps) {
   const max = Math.max(a, b, tie, 1)
 
   const rows: { label: string; count: number; color: string }[] = [
-    { label: nameA, count: a, color: '#111827' },
-    { label: nameB, count: b, color: '#2563eb' },
-    { label: t('compare.tie'), count: tie, color: '#d1d5db' },
+    { label: nameA, count: a, color: 'var(--duel-first)' },
+    { label: nameB, count: b, color: 'var(--duel-second)' },
+    { label: t('compare.tie'), count: tie, color: 'var(--duel-tie)' },
   ]
 
   return (

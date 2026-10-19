@@ -14,12 +14,12 @@ type DuelGridProps = {
 
 /** Who led each day: A in ink, B in the accent, a tie in grey. */
 const COLORS = {
-  none: '#f3f4f6',
-  tie: '#d1d5db',
-  aStrong: '#111827',
-  aWeak: '#6b7280',
-  bStrong: '#2563eb',
-  bWeak: '#93c5fd',
+  none: 'var(--duel-none)',
+  tie: 'var(--duel-tie)',
+  aStrong: 'var(--duel-first)',
+  aWeak: 'var(--duel-first-weak)',
+  bStrong: 'var(--duel-second)',
+  bWeak: 'var(--duel-second-weak)',
 } as const
 
 function fillFor(day: DuelDay): string {

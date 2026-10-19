@@ -69,7 +69,7 @@ export function DuelDial({
           cy={center}
           r={innerA - stroke / 2}
           fill="none"
-          stroke="#e5e7eb"
+          stroke="var(--line)"
           strokeWidth={1}
         />
 
@@ -84,7 +84,7 @@ export function DuelDial({
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="#111827"
+              stroke="var(--duel-first)"
               strokeWidth={stroke}
               strokeLinecap="round"
             />
@@ -102,7 +102,7 @@ export function DuelDial({
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="#2563eb"
+              stroke="var(--duel-second)"
               strokeWidth={stroke}
               strokeLinecap="round"
             />
@@ -118,8 +118,8 @@ export function DuelDial({
               cx={center + Math.cos(a) * r}
               cy={center + Math.sin(a) * r}
               r={stroke * 0.46}
-              fill="#ffffff"
-              stroke="#111827"
+              fill="var(--ground)"
+              stroke="var(--duel-first)"
               strokeWidth={stroke * 0.26}
             />
           )

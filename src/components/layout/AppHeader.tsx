@@ -4,6 +4,7 @@ import { LanguageToggle } from './LanguageToggle'
 import { RateLimitMeter } from './RateLimitMeter'
 import { SearchField } from './SearchField'
 import { TokenButton } from './TokenButton'
+import { ThemeToggle } from './ThemeToggle'
 
 export function AppHeader() {
   const { t } = useI18n()
@@ -39,6 +40,7 @@ export function AppHeader() {
           </NavLink>
           <RateLimitMeter />
           <LanguageToggle />
+          <ThemeToggle />
           <TokenButton />
         </nav>
       </div>

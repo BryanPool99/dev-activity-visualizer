@@ -1,13 +1,11 @@
 import { useMemo, useRef, useState } from 'react'
 import { weekdayOf } from '../../lib/metrics/dates'
 import type { DayCount } from '../../lib/metrics/types'
-import { CONTRIBUTION_SCALE, contributionLevel } from '../../lib/charts/scale'
+import { contributionFill, contributionLevel } from '../../lib/charts/scale'
 import { formatDay } from '../../lib/charts/format'
 
 type HeatmapProps = {
   days: DayCount[]
-  /** The palette for the steps. The light scale by default. */
-  palette?: readonly string[]
   /** Cell edge in pixels. Left unset, the cells grow when the window is short. */
   cellSize?: number
   /** Gap between cells, in pixels. */
@@ -40,7 +38,6 @@ function cellSizeFor(columns: number): number {
  */
 export function Heatmap({
   days,
-  palette = CONTRIBUTION_SCALE,
   cellSize,
   gap = 3,
   unitLabel,
@@ -164,7 +161,7 @@ export function Heatmap({
               width={resolvedCellSize}
               height={resolvedCellSize}
               rx={2}
-              fill={palette[cell.level]}
+              fill={contributionFill(cell.level)}
               onMouseEnter={(event) => trackPointer(event, cell.day)}
               onMouseMove={(event) => trackPointer(event, cell.day)}
               onMouseLeave={() => setHovered(null)}

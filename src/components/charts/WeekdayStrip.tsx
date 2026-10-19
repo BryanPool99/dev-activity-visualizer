@@ -42,7 +42,7 @@ export function WeekdayStrip({ counts, busiest, labels, name }: WeekdayStripProp
               width={BAR_WIDTH}
               height={barHeight}
               rx={3}
-              fill={isPeak ? '#111827' : '#d1d5db'}
+              fill={isPeak ? 'var(--ink)' : 'var(--line-strong)'}
             />
             <text
               x={x + BAR_WIDTH / 2}

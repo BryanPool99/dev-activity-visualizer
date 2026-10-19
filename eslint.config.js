@@ -23,7 +23,7 @@ export default tseslint.config(
         'warn',
         {
           allowConstantExport: true,
-          allowExportNames: ['useI18n', 'useToken', 'useRateLimit', 'verifyToken'],
+          allowExportNames: ['useI18n', 'useToken', 'useRateLimit', 'useTheme', 'verifyToken'],
         },
       ],
     },
