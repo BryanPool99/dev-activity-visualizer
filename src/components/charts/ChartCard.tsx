@@ -15,12 +15,12 @@ type ChartCardProps = {
 
 export function ChartCard({ title, meta, children, footer, tight = false }: ChartCardProps) {
   return (
-    <Card>
+    <Card className="flex h-full flex-col">
       <header className="flex items-baseline justify-between gap-4 px-6 py-4">
         <h2 className="text-sm font-semibold text-ink">{title}</h2>
         {meta ? <div className="text-xs text-ink-muted">{meta}</div> : null}
       </header>
-      <div className={tight ? 'px-6 pb-2' : 'px-6 py-5'}>{children}</div>
+      <div className={`flex-1 ${tight ? 'px-6 pb-2' : 'px-6 py-5'}`}>{children}</div>
       {footer ? <div className="px-6 pt-3 pb-5">{footer}</div> : null}
     </Card>
   )
