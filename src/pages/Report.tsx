@@ -45,18 +45,17 @@ export function Report() {
   const { profile, sources, completeness } = query.data
 
   return (
-    <div className="px-6 py-6">
-      <div className="rise">
-        <IdentityBand profile={profile} metrics={metrics} />
-      </div>
+    // One authored entrance for the whole report, and nothing else moving.
+    <div className="rise px-6 py-6">
+      <IdentityBand profile={profile} metrics={metrics} />
 
       {completeness === 'partial' ? (
-        <div className="rise mt-6" style={{ animationDelay: '60ms' }}>
+        <div className="mt-6">
           <TokenPrompt days={metrics.calendar.windowDays} />
         </div>
       ) : null}
 
-      <div className="rise mt-6" style={{ animationDelay: '120ms' }}>
+      <div className="mt-6">
         <ContributionCard
           name={profile.login}
           metrics={metrics}
@@ -65,10 +64,10 @@ export function Report() {
       </div>
 
       <div className="mt-6 grid grid-cols-12 items-stretch gap-6">
-        <div className="rise col-span-12 h-full lg:col-span-5" style={{ animationDelay: '180ms' }}>
+        <div className="col-span-12 h-full lg:col-span-5">
           <InsightsPanel insights={metrics.insights} />
         </div>
-        <div className="rise col-span-12 h-full lg:col-span-7" style={{ animationDelay: '220ms' }}>
+        <div className="col-span-12 h-full lg:col-span-7">
           <LanguageCard metrics={metrics} source={sources.repos} />
         </div>
       </div>

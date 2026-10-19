@@ -113,19 +113,22 @@ export function Heatmap({
     const rect = frame.getBoundingClientRect()
     setHovered({
       day,
-      at: { x: event.clientX - rect.left, y: event.clientY - rect.top },
+      at: {
+        x: event.clientX - rect.left + frame.scrollLeft,
+        y: event.clientY - rect.top,
+      },
     })
   }
 
   return (
-    <div className="relative" ref={frameRef}>
+    <div className="relative overflow-x-auto" ref={frameRef}>
       <svg
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
         role="img"
         aria-label={`${name}: ${total} ${unitLabel} across ${activeDays} active days.`}
-        className="max-w-full"
+        className="shrink-0"
       >
         <g transform={`translate(28, 16)`}>
           {monthLabels.map((label) => (

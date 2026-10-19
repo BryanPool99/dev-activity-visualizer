@@ -1,5 +1,6 @@
 import { useI18n } from '../../i18n'
 import { Heatmap } from '../charts/Heatmap'
+import { DayColumns } from '../charts/DayColumns'
 import { ContributionLegend } from '../charts/ContributionLegend'
 import { SourceNote } from '../charts/SourceNote'
 import { Card } from '../ui/Card'
@@ -36,16 +37,24 @@ export function ContributionCard({ name, metrics, source }: ContributionCardProp
         </span>
       </header>
 
-      <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-6 px-6 pt-1 pb-2">
-        {calendar.days.length > 0 ? (
-          <Heatmap days={calendar.days} unitLabel={unit} name={name} />
-        ) : (
+      {calendar.days.length === 0 ? (
+        <div className="px-6 pt-1 pb-2">
           <p className="py-10 text-sm text-ink-muted">{t('report.noActivity')}</p>
-        )}
-        <div className="w-full shrink-0 sm:w-80">
-          <TopDays days={calendar.days} unitLabel={unit} />
         </div>
-      </div>
+      ) : calendar.measure === 'contributions' ? (
+        // A year needs a week grid; the top days earn their place beside it.
+        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-6 px-6 pt-1 pb-2">
+          <Heatmap days={calendar.days} unitLabel={unit} name={name} />
+          <div className="w-full shrink-0 sm:w-80">
+            <TopDays days={calendar.days} unitLabel={unit} />
+          </div>
+        </div>
+      ) : (
+        // A short window reads better as one column per day, filling the card.
+        <div className="px-6 pt-1 pb-4">
+          <DayColumns days={calendar.days} unitLabel={unit} name={name} />
+        </div>
+      )}
 
       <footer className="flex flex-wrap items-center justify-between gap-4 px-6 pt-2 pb-5">
         <SourceNote

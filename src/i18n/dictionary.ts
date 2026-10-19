@@ -49,12 +49,13 @@ const es = {
   'compare.sharedHours': 'horas en común',
   'compare.overlap': 'Se cruzan {count} horas del día.',
   'compare.overlapNone': 'No comparten ninguna hora del día.',
-  'compare.gridTitle': 'El día a día, día por día',
+  'compare.gridTitle': 'Día a día, uno junto al otro',
   'compare.dialTitle': 'Las horas de cada uno',
   'compare.choose': 'Elige dos cuentas de GitHub',
   'compare.chooseBody':
     'Pon dos nombres y el informe los pone uno junto al otro: quién empuja más cada día, a qué hora trabaja cada uno y qué métricas se llevan.',
   'compare.daysShared': 'días en común',
+  'compare.verdictStars': 'Estrellas',
   'compare.verdicts': 'Cara a cara',
 
   'home.placeholder': 'Escribe un usuario de GitHub para ver su informe.',
@@ -207,13 +208,13 @@ const en: Dictionary = {
   'compare.sharedHours': 'shared hours',
   'compare.overlap': 'They cross on {count} hours of the day.',
   'compare.overlapNone': 'They share no hour of the day.',
-  'compare.gridTitle': 'Day by day, side by side',
-  'compare.dialTitle': 'The hours of each one',
+  'compare.gridTitle': 'Day by day, side by side',  'compare.dialTitle': 'The hours of each one',
   'compare.verdicts': 'Head to head',
   'compare.choose': 'Choose two GitHub accounts',
   'compare.chooseBody':
     'Enter two names and the report sets them next to each other: who pushed more on each day, the hour each one works at, and which metrics they take.',
   'compare.daysShared': 'days in common',
+  'compare.verdictStars': 'Stars',
 
   'home.placeholder': 'Type a GitHub username to see their report.',
   'home.recent': 'No history yet: reports are remembered in this browser.',

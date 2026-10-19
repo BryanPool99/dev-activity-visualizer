@@ -52,14 +52,22 @@ export function Compare() {
           name={queryA.data.profile.login}
           avatar={queryA.data.profile.avatarUrl}
           total={metricsA.calendar.total}
-          unit={metricsA.calendar.measure === 'contributions' ? 'contribuciones' : 'pushes'}
+          unit={
+            metricsA.calendar.measure === 'contributions'
+              ? t('report.unit.contributions')
+              : t('report.unit.pushes')
+          }
         />
         <span className="text-lg font-semibold tracking-tight text-ink-subtle">vs</span>
         <Identity
           name={queryB.data.profile.login}
           avatar={queryB.data.profile.avatarUrl}
           total={metricsB.calendar.total}
-          unit={metricsB.calendar.measure === 'contributions' ? 'contributions' : 'pushes'}
+          unit={
+            metricsB.calendar.measure === 'contributions'
+              ? t('report.unit.contributions')
+              : t('report.unit.pushes')
+          }
         />
       </div>
 
