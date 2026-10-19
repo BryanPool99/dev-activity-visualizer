@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useI18n } from '../i18n'
 import { useUserReport } from '../hooks/useUserReport'
 import { buildMetrics } from '../lib/metrics'
@@ -143,6 +143,7 @@ function Identity({
 
 function Chooser() {
   const { t } = useI18n()
+  const navigate = useNavigate()
   const [a, setA] = useState('')
   const [b, setB] = useState('')
 
@@ -151,7 +152,7 @@ function Chooser() {
     const first = normalizeUsername(a)
     const second = normalizeUsername(b)
     if (!first || !second) return
-    window.location.assign(`/compare?a=${encodeURIComponent(first)}&b=${encodeURIComponent(second)}`)
+    navigate(`/compare?a=${encodeURIComponent(first)}&b=${encodeURIComponent(second)}`)
   }
 
   return (

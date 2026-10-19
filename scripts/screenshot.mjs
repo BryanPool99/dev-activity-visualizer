@@ -46,7 +46,7 @@ try {
   await new Promise((resolve) => setTimeout(resolve, 1500))
 
   const outPath = resolve(OUT_DIR, `${name}.png`)
-  await page.screenshot({ path: outPath, fullPage: false })
+  await page.screenshot({ path: outPath, fullPage: process.env.FULL_PAGE === '1' })
   console.log(outPath)
 } finally {
   await browser.close()

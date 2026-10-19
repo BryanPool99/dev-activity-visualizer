@@ -10,9 +10,13 @@ type DialogProps = {
 
 export function Dialog({ open, onClose, title, children }: DialogProps) {
   const panelRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     if (!open) return
+
+    const previouslyFocused = document.activeElement as HTMLElement | null
+    triggerRef.current = previouslyFocused
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
@@ -30,6 +34,7 @@ export function Dialog({ open, onClose, title, children }: DialogProps) {
     return () => {
       document.removeEventListener('keydown', onKeyDown)
       document.body.style.overflow = previousOverflow
+      triggerRef.current?.focus()
     }
   }, [open, onClose])
 

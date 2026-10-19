@@ -46,13 +46,17 @@ export function Report() {
 
   return (
     <div className="px-6 py-6">
-      <IdentityBand profile={profile} metrics={metrics} />
+      <div className="rise">
+        <IdentityBand profile={profile} metrics={metrics} />
+      </div>
 
       {completeness === 'partial' ? (
-        <TokenPrompt days={metrics.calendar.windowDays} />
+        <div className="rise mt-6" style={{ animationDelay: '60ms' }}>
+          <TokenPrompt days={metrics.calendar.windowDays} />
+        </div>
       ) : null}
 
-      <div className="mt-6">
+      <div className="rise mt-6" style={{ animationDelay: '120ms' }}>
         <ContributionCard
           name={profile.login}
           metrics={metrics}
@@ -61,10 +65,10 @@ export function Report() {
       </div>
 
       <div className="mt-6 grid grid-cols-12 items-stretch gap-6">
-        <div className="col-span-12 h-full lg:col-span-5">
+        <div className="rise col-span-12 h-full lg:col-span-5" style={{ animationDelay: '180ms' }}>
           <InsightsPanel insights={metrics.insights} />
         </div>
-        <div className="col-span-12 h-full lg:col-span-7">
+        <div className="rise col-span-12 h-full lg:col-span-7" style={{ animationDelay: '220ms' }}>
           <LanguageCard metrics={metrics} source={sources.repos} />
         </div>
       </div>

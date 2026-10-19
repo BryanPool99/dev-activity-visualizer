@@ -37,7 +37,11 @@ export function ContributionCard({ name, metrics, source }: ContributionCardProp
       </header>
 
       <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-6 px-6 pt-1 pb-2">
-        <Heatmap days={calendar.days} unitLabel={unit} name={name} />
+        {calendar.days.length > 0 ? (
+          <Heatmap days={calendar.days} unitLabel={unit} name={name} />
+        ) : (
+          <p className="py-10 text-sm text-ink-muted">{t('report.noActivity')}</p>
+        )}
         <div className="w-full shrink-0 sm:w-80">
           <TopDays days={calendar.days} unitLabel={unit} />
         </div>
