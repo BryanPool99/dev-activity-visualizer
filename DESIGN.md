@@ -39,9 +39,15 @@ typography:
     letterSpacing: "-0.025em"
   figure:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "24px"
+    fontSize: "28px"
     fontWeight: 600
     lineHeight: "32px"
+    letterSpacing: "-0.025em"
+  peak:
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "40px"
+    fontWeight: 600
+    lineHeight: "44px"
     letterSpacing: "-0.025em"
   lead:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
@@ -223,11 +229,11 @@ A cool neutral scale, one blue accent, and a single island of saturated colour r
 ### Hierarchy
 - **Display** (600, 36px/40px, -0.025em): the product name on the home page. It appears once in the product.
 - **Headline** (600, 20px/28px, -0.025em): the person's name in the identity band, and 24px in the duel chooser. The one place a large type meets a real human.
-- **Figure** (600, 24px/32px, -0.025em): the value in a stat tile, and the percentage in the middle of the language ring. A number is set like a number, not like a heading.
+- **Figure** (600, 28px/32px, -0.025em): the value in a supporting stat tile, and the percentage in the middle of the language ring. A number is set like a number, not like a heading.
+- **Peak** (600, 40px/44px, -0.025em): the one number the report is about — the year's total, in the first tile of the identity band. It is the largest type in the product, and it appears exactly once per screen.
 - **Lead** (400, 18px/28px): the sentence under the product name on the home page.
 - **Section** (600, 16px/24px): the two section headings on the home page.
-- **Title** (600, 14px/20px): every card title and every card-header title. No card title is ever a display size.
-- **Body** (400, 14px/20px): sentences, findings, repository descriptions. Prose blocks that wrap run at 26px (1.625) for legibility; single-line body text stays at 20px.
+- **Title** (600, 14px/20px): every card title and every card-header title. No card title is ever a display size.- **Body** (400, 14px/20px): sentences, findings, repository descriptions. Prose blocks that wrap run at 26px (1.625) for legibility; single-line body text stays at 20px.
 - **Control** (500, 14px/20px): buttons, inputs, the language toggle, navigation links, and the value of a stat tile's label row.
 - **Label** (500, 11px/16px, 0.08em, uppercase): the metric name above a stat value, the `FUENTE` prefix on a source note, and section labels such as "Los días más cargados". It is the only uppercase style in the product, and it is always small and always tracked.
 

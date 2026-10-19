@@ -5,6 +5,7 @@ import { useUserReport } from '../hooks/useUserReport'
 import { buildMetrics } from '../lib/metrics'
 import { rememberAccount } from '../lib/recent'
 import { IdentityBand } from '../components/report/IdentityBand'
+import { ReportLede } from '../components/report/ReportLede'
 import { ContributionCard } from '../components/report/ContributionCard'
 import { InsightsPanel } from '../components/report/InsightsPanel'
 import { LanguageCard } from '../components/report/LanguageCard'
@@ -48,6 +49,8 @@ export function Report() {
     // One authored entrance for the whole report, and nothing else moving.
     <div className="rise px-6 py-6">
       <IdentityBand profile={profile} metrics={metrics} />
+
+      <ReportLede metrics={metrics} />
 
       {completeness === 'partial' ? (
         <div className="mt-6">

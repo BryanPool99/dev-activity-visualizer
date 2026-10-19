@@ -127,6 +127,11 @@ const es = {
   'report.noRepos': 'Sin repositorios públicos que enseñar.',
   'report.noLanguages': 'Sin lenguajes que enseñar.',
   'report.noActivity': 'No hay actividad pública que representar.',
+  'report.lede.in': 'en',
+  'report.lede.days': 'días',
+  'report.lede.rest':
+    'El pico cae a las {hour}:00, la mejor racha llega a {streak} días seguidos y estuvo activo {activeDays} de {totalDays} días.',
+  'report.lede.brief': 'Repartidas en {activeDays} días activos.',
   'report.location': 'Ubicación',
   'report.topDays': 'Los días más cargados',
   'report.sources': 'Fuentes de los datos',
@@ -286,6 +291,11 @@ const en: Dictionary = {
   'report.noRepos': 'No public repositories to show.',
   'report.noLanguages': 'No languages to show.',
   'report.noActivity': 'No public activity to chart.',
+  'report.lede.in': 'over',
+  'report.lede.days': 'days',
+  'report.lede.rest':
+    'The peak lands at {hour}:00, the longest streak runs to {streak} days in a row, and it was active on {activeDays} of {totalDays} days.',
+  'report.lede.brief': 'Spread across {activeDays} active days.',
   'report.location': 'Location',
   'report.topDays': 'The heaviest days',
   'report.sources': 'Where the data comes from',
