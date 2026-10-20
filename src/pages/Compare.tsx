@@ -49,7 +49,7 @@ export function Compare() {
   return (
     <div className="px-6 py-6">
       {/* On a phone the two accounts stack; on a wide screen they stand side by side. */}
-      <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
+      <div className="flex flex-col justify-center items-center gap-3 sm:flex-row sm:items-center sm:gap-6">
         <Identity
           name={queryA.data.profile.login}
           avatar={queryA.data.profile.avatarUrl}
