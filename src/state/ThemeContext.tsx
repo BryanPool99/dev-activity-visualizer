@@ -13,19 +13,20 @@ type ThemeValue = {
 
 const ThemeContext = createContext<ThemeValue | null>(null)
 
-function systemTheme(): Theme {
-  if (typeof window === 'undefined') return 'light'
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-}
-
 function storedTheme(): Theme | null {
   if (typeof window === 'undefined') return null
   const stored = window.localStorage.getItem(STORAGE_KEY)
   return stored === 'dark' || stored === 'light' ? stored : null
 }
 
+/**
+ * Dark is the default. The reader's own choice, once made, is remembered and
+ * always wins over this.
+ */
+const DEFAULT_THEME: Theme = 'dark'
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(() => storedTheme() ?? systemTheme())
+  const [theme, setThemeState] = useState<Theme>(() => storedTheme() ?? DEFAULT_THEME)
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
