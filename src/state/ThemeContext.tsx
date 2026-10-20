@@ -30,6 +30,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     document.documentElement.style.colorScheme = theme
+
+    // The browser's own chrome follows the theme in force, not the system's.
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]:not([media])')
+    if (meta) meta.content = theme === 'dark' ? '#0b0d10' : '#ffffff'
   }, [theme])
 
   const setTheme = useCallback((next: Theme) => {

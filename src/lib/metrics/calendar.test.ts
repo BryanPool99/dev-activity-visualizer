@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildCalendar, computeStreaks, daysFromPushes, fillQuietDays } from './calendar'
+import { todayKey } from './dates'
 import { addDays, dateRange, daysBetween, mondayFirstIndex, weekdayOf } from './dates'
 import type { DayCount } from './types'
 import type { PushRecord } from '../github/types'
@@ -70,7 +71,7 @@ describe('daysFromPushes', () => {
 
 describe('computeStreaks', () => {
   it('finds the longest run of consecutive active days', () => {
-    const today = new Date().toISOString().slice(0, 10)
+    const today = todayKey()
     const days = [
       day(addDays(today, -6), 1),
       day(addDays(today, -5), 1),
@@ -84,7 +85,7 @@ describe('computeStreaks', () => {
   })
 
   it('counts a streak that reaches today', () => {
-    const today = new Date().toISOString().slice(0, 10)
+    const today = todayKey()
     const days = [day(addDays(today, -2), 1), day(addDays(today, -1), 1), day(today, 1)]
 
     const streaks = computeStreaks(days)
@@ -93,7 +94,7 @@ describe('computeStreaks', () => {
   })
 
   it('breaks the current streak when today has no activity', () => {
-    const today = new Date().toISOString().slice(0, 10)
+    const today = todayKey()
     const days = [day(addDays(today, -2), 1), day(addDays(today, -1), 1)]
 
     const streaks = computeStreaks(days)
@@ -102,7 +103,7 @@ describe('computeStreaks', () => {
   })
 
   it('counts a streak that only ends yesterday as the longest, not the current one', () => {
-    const today = new Date().toISOString().slice(0, 10)
+    const today = todayKey()
     const days = [day(addDays(today, -3), 1), day(addDays(today, -2), 1), day(addDays(today, -1), 1)]
 
     const streaks = computeStreaks(days)
@@ -115,7 +116,7 @@ describe('computeStreaks', () => {
   })
 
   it('counts the active days', () => {
-    const today = new Date().toISOString().slice(0, 10)
+    const today = todayKey()
     const days = [day(today, 3), day(addDays(today, -1), 0), day(addDays(today, -2), 1)]
 
     expect(computeStreaks(days).activeDays).toBe(2)
